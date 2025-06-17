@@ -6,19 +6,16 @@ let quizData = [];
 /* -------- DOM -------- */
 const container  = document.getElementById('quiz-container');
 const shuffleBtn = document.getElementById('shuffle-btn');
+const dbSelect   = document.getElementById('db-select');
 
 /* -------- INIT -------- */
 (async function init() {
   try {
-    const res = await fetch('q.json');
-    quizData = await res.json();
+    await loadQuizData(dbSelect.value);
 
-    // Read query param and clamp to range
-    const params = new URLSearchParams(window.location.search);
-    const qParam = parseInt(params.get('q'), 10);
-    if (!isNaN(qParam) && qParam >= 1 && qParam <= quizData.length) {
-      idx = qParam - 1;
-    }
+    dbSelect.addEventListener('change', async () => {
+      await loadQuizData(dbSelect.value);
+    });
 
     shuffleBtn.addEventListener('click', () => {
       shuffleArray(quizData);
@@ -32,12 +29,26 @@ const shuffleBtn = document.getElementById('shuffle-btn');
   } catch (err) {
     container.innerHTML = `
       <p style="text-align:center">
-        ❌ Could not load <strong>q.json</strong>.<br>
+        ❌ Could not load the quiz database.<br>
         Run the page through a local server.
       </p>`;
     console.error(err);
   }
 })();
+
+/* -------- LOAD QUIZ DATA -------- */
+async function loadQuizData(filename) {
+  const res = await fetch(filename);
+  quizData = await res.json();
+
+  // Read and validate query param
+  const params = new URLSearchParams(window.location.search);
+  const qParam = parseInt(params.get('q'), 10);
+  idx = (!isNaN(qParam) && qParam >= 1 && qParam <= quizData.length) ? qParam - 1 : 0;
+
+  score = 0;
+  renderQuestion();
+}
 
 /* -------- RENDERERS -------- */
 function renderQuestion() {
