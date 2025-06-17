@@ -4,8 +4,8 @@ let score = 0;
 let quizData = [];
 
 /* -------- DOM -------- */
-const container   = document.getElementById('quiz-container');
-const shuffleBtn  = document.getElementById('shuffle-btn');
+const container  = document.getElementById('quiz-container');
+const shuffleBtn = document.getElementById('shuffle-btn');
 
 /* -------- INIT -------- */
 (async function init() {
@@ -13,11 +13,19 @@ const shuffleBtn  = document.getElementById('shuffle-btn');
     const res = await fetch('q.json');
     quizData = await res.json();
 
-    // Shuffle handler
+    // 1. Read query param and clamp
+    const params = new URLSearchParams(window.location.search);
+    const qParam = parseInt(params.get('q'), 10);
+    if (!isNaN(qParam) && qParam >= 1 && qParam <= quizData.length) {
+      idx = qParam - 1;
+    }
+
+    // 2. Shuffle handler resets idx and score, updates URL, then renders
     shuffleBtn.addEventListener('click', () => {
       shuffleArray(quizData);
-      idx = 0;
+      idx   = 0;
       score = 0;
+      updateURL(idx);
       renderQuestion();
     });
 
@@ -34,7 +42,12 @@ const shuffleBtn  = document.getElementById('shuffle-btn');
 
 /* -------- RENDERERS -------- */
 function renderQuestion() {
-  if (idx >= quizData.length) return renderScore();
+  if (idx >= quizData.length) {
+    return renderScore();
+  }
+
+  // Update URL so bookmarking/linking stays in sync
+  updateURL(idx);
 
   const { question, options } = quizData[idx];
   const card = document.createElement('div');
@@ -83,7 +96,7 @@ function handleAnswer(btn, selected, correct, explanation) {
     if (correctBtn) correctBtn.classList.add('correct');
   }
 
-  // Explanation
+  // Show explanation
   const expDiv = document.createElement('div');
   expDiv.className = 'explanation';
   expDiv.textContent = explanation;
@@ -106,5 +119,10 @@ function shuffleArray(arr) {
     const j = Math.floor(Math.random() * (i + 1));
     [arr[i], arr[j]] = [arr[j], arr[i]];
   }
-  return arr;
+}
+
+// Update the browser URL to ?q=currentQuestionIndex+1 without reloading
+function updateURL(questionIndex) {
+  const newUrl = `${window.location.pathname}?q=${questionIndex + 1}`;
+  history.replaceState(null, '', newUrl);
 }
