@@ -1,125 +1,186 @@
-/* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+/* ------------------------------------------------------
+   Cyberpunk-Inspired Theme – index.css
+   ------------------------------------------------------
+   Font Imports
+------------------------------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@400;600&display=swap');
 
+/* ------------------------------------------------------
+   Root Variables
+------------------------------------------------------ */
 :root {
-  --primary: #1a73e8;
-  --primary-dark: #1256b6;
-  --bg-light: #f9f9f9;
-  --bg-dark: #1e1e1e;
-  --card-light: #ffffff;
-  --card-dark: #2b2b2b;
-  --shadow: rgba(0, 0, 0, 0.08);
+  /* Palette */
+  --neon-cyan: #00eaff;
+  --neon-pink: #ff006e;
+  --neon-purple: #955dff;
+  --bg-main: #0e0e17;
+  --bg-card: rgba(25, 25, 34, 0.85);
+  --text-light: #e2e2ff;
   --radius: 14px;
+
+  /* Shadows & Glow */
+  --glow-cyan: 0 0 8px var(--neon-cyan), 0 0 15px var(--neon-cyan);
+  --glow-pink: 0 0 8px var(--neon-pink), 0 0 15px var(--neon-pink);
 }
 
+/* Universal reset */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   font-family: 'Inter', sans-serif;
-  background: var(--bg-light);
-  color: #333;
+  background: var(--bg-main);
+  color: var(--text-light);
   line-height: 1.6;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
-/* ---------- HEADER ---------- */
+/* ---------- Header ---------- */
 header {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  color: #fff;
-  text-align: center;
+  position: relative;
   padding: 2rem 1rem;
-  box-shadow: 0 4px 12px var(--shadow);
+  text-align: center;
+  background: radial-gradient(circle at top left, var(--neon-pink) 0%, transparent 70%),
+              radial-gradient(circle at bottom right, var(--neon-cyan) 0%, transparent 70%);
+  overflow: hidden;
+}
+header h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.6rem, 5vw, 2.3rem);
+  color: var(--text-light);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  filter: drop-shadow(var(--glow-cyan));
+  animation: flicker 3s linear infinite;
 }
 
-header h1 { font-size: clamp(1.4rem, 4vw, 2rem); }
+/* Flicker animation */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  92%, 98% { opacity: 0.8; }
+  96% { opacity: 0.4; }
+}
 
-/* ---------- MAIN ---------- */
+/* ---------- Main ---------- */
 main {
   flex: 1;
   width: 100%;
-  max-width: 700px;
+  max-width: 760px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
+/* Card */
 .card {
-  background: var(--card-light);
+  background: var(--bg-card);
+  border: 1px solid var(--neon-purple);
   border-radius: var(--radius);
-  box-shadow: 0 6px 18px var(--shadow);
   padding: 2rem 1.5rem;
-  transition: background 0.3s ease;
+  box-shadow: var(--glow-pink);
+  backdrop-filter: blur(6px);
+  position: relative;
+  overflow: hidden;
 }
 
+/* Decorative pseudo-border */
+.card::before, .card::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: conic-gradient(
+    from 0deg,
+    var(--neon-pink),
+    var(--neon-cyan),
+    var(--neon-purple),
+    var(--neon-pink)
+  );
+  z-index: -1;
+  filter: blur(10px);
+  animation: rotate 7s linear infinite;
+}
+.card::after {
+  filter: blur(30px);
+}
+@keyframes rotate {
+  100% { transform: rotate(360deg); }
+}
+
+/* Question */
 .question {
   font-size: 1.25rem;
   font-weight: 600;
-  margin-bottom: 1.25rem;
-  color: var(--primary-dark);
+  margin-bottom: 1.5rem;
+  color: var(--neon-cyan);
+  text-shadow: var(--glow-cyan);
 }
 
+/* Options */
 .options {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1rem;
 }
 
 button.option {
   font-size: 1rem;
-  padding: 0.9rem 1rem;
+  padding: 1rem 1.25rem;
   border: 2px solid transparent;
   border-radius: var(--radius);
   cursor: pointer;
-  background: #f0f0f0;
-  transition: all 0.2s ease;
+  color: var(--text-light);
+  background: rgba(255, 255, 255, 0.05);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 }
-
 button.option:hover,
 button.option:focus-visible {
-  background: #e6e6e6;
-  border-color: var(--primary);
+  transform: translateY(-2px);
+  border-color: var(--neon-cyan);
+  box-shadow: var(--glow-cyan);
   outline: none;
 }
 
+/* Correct / Incorrect */
 button.option.correct {
-  background: #d4edda;
-  border-color: #28a745;
-  color: #155724;
+  background: rgba(0, 234, 255, 0.12);
+  border-color: var(--neon-cyan);
+  box-shadow: var(--glow-cyan);
 }
-
 button.option.incorrect {
-  background: #f8d7da;
-  border-color: #dc3545;
-  color: #721c24;
+  background: rgba(255, 0, 110, 0.12);
+  border-color: var(--neon-pink);
+  box-shadow: var(--glow-pink);
 }
 
+/* Explanation */
 .explanation {
-  margin-top: 1.5rem;
-  padding: 1rem;
-  border-left: 4px solid var(--primary);
-  background: #eef4ff;
-  border-radius: calc(var(--radius) / 2);
+  margin-top: 1.8rem;
+  padding: 1rem 1.25rem;
   font-size: 0.95rem;
+  border-left: 4px solid var(--neon-purple);
+  background: rgba(149, 93, 255, 0.08);
+  border-radius: calc(var(--radius) / 2);
 }
 
-/* ---------- FOOTER ---------- */
+/* ---------- Footer ---------- */
 footer {
   text-align: center;
-  padding: 1rem 0 2rem;
-  font-size: 0.9rem;
-  background: transparent;
+  padding: 1.2rem 0 2rem;
+  font-size: 0.85rem;
+  color: var(--neon-purple);
+}
+footer a {
+  color: var(--neon-cyan);
+  text-decoration: none;
+}
+footer a:hover {
+  text-shadow: var(--glow-cyan);
 }
 
-footer a { color: var(--primary); text-decoration: none; }
-footer a:hover { text-decoration: underline; }
-
-/* ---------- DARK MODE ---------- */
-@media (prefers-color-scheme: dark) {
-  body { background: var(--bg-dark); color: #e0e0e0; }
-  .card { background: var(--card-dark); }
-  button.option { background: #3a3a3a; color: #f0f0f0; }
-  button.option:hover,
-  button.option:focus-visible { background: #444; }
-  .explanation { background: #24304b; color: #e0e0e0; }
+/* ---------- Responsive Enhancements ---------- */
+@media (max-width: 480px) {
+  .card { padding: 1.5rem 1rem; }
+  button.option { font-size: 0.95rem; }
+  .question { font-size: 1.1rem; }
 }
