@@ -1,168 +1,198 @@
-/* ======================================================
-   Minecraft-Inspired Responsive Theme – index.css (v2)
-   Mobile-optimized, normal question font, white footer text
-   ====================================================== */
+/* =========================================================
+   Professional Dark Theme – index.css
+   Black background, white text, perfect mobile-first design
+   ========================================================= */
 
-/* ------------------- Font Imports ------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;500&display=swap');
+/* ---------- Font Import ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
-/* ------------------- Design Tokens ------------------- */
+/* ---------- Design Tokens ---------- */
 :root {
-  /* Minecraft palette */
-  --grass: #4caf50;
-  --grass-dark: #388e3c;
-  --dirt: #795548;
-  --stone: #9e9e9e;
-  --sky-light: #57c4ff;
-  --sky-dark: #1ea0ff;
-  --text-light: #f0f0f0;
+  /* Colors */
+  --bg-page: #000000;
+  --bg-card: #1a1a1a;
+  --text-main: #ffffff;
+  --text-muted: #cccccc;
+  --accent: #00adee;
+  --error: #e74c3c;
+  --radius: 12px;
 
-  /* Layout & sizing */
-  --radius: 6px;
-  --gap: 0.9rem;
-  --max-width: 680px;
+  /* Spacing & sizing */
+  --gap: 1rem;
+  --max-width: 720px;
   --safe-pad: env(safe-area-inset, 0);
 
-  /* Pixel outline */
-  --pixel: 0 0 0 2px var(--stone);
+  /* Shadows */
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
 }
 
-/* -------------- Global Reset & Base -------------- */
-*, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+/* ---------- Global Reset & Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: var(--safe-pad);
-  font-family: 'Roboto', sans-serif;
-  background: linear-gradient(to bottom, var(--sky-light), var(--sky-dark));
-  color: var(--text-light);
-  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.5;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* ------------------- Header ------------------- */
+/* ---------- Header ---------- */
 header {
-  background: var(--grass);
-  box-shadow: var(--pixel);
   text-align: center;
-  padding: clamp(1.2rem, 6vw, 2rem) 1rem;
-}
-header h1 {
-  font-family: 'Press Start 2P', monospace;
-  font-size: clamp(1rem, 4.5vw, 1.6rem);
-  color: var(--text-light);
-  line-height: 1.3;
-  word-break: break-word;
+  padding: clamp(1rem, 5vw, 2rem) 1rem;
+  border-bottom: 2px solid var(--accent);
 }
 
-/* ------------------- Main ------------------- */
+header h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 6vw, 2.5rem);
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* ---------- Main Container ---------- */
 main {
   flex: 1;
   width: 100%;
   max-width: var(--max-width);
-  margin: 1.5rem auto;
+  margin: 2rem auto;
   padding: 0 1rem;
 }
 
-/* ------------------- Quiz Card ------------------- */
+/* ---------- Quiz Card ---------- */
 .card {
-  background: var(--dirt);
-  border: 3px solid var(--stone);
+  background: var(--bg-card);
   border-radius: var(--radius);
-  padding: clamp(1rem, 4vw, 1.6rem);
-  box-shadow: var(--pixel);
+  box-shadow: var(--shadow);
+  padding: clamp(1rem, 4vw, 1.5rem);
+  margin-bottom: var(--gap);
   overflow: hidden;
 }
 
-/* Question Text (normal font) */
+/* ---------- Question ---------- */
 .question {
-  font-family: 'Roboto', sans-serif;
-  font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+  font-size: clamp(1rem, 4vw, 1.3rem);
   font-weight: 500;
-  color: var(--sky-light);
+  color: var(--text-main);
   margin-bottom: 1rem;
-  white-space: normal;
   word-break: break-word;
 }
 
-/* ------------------- Options ------------------- */
+/* ---------- Options ---------- */
 .options {
   display: flex;
   flex-direction: column;
-  gap: var(--gap);
-}
-button.option {
-  font-family: 'Roboto', sans-serif;
-  font-size: clamp(0.85rem, 3vw, 0.95rem);
-  padding: clamp(0.8rem, 3vw, 0.95rem) 1rem;
-  border: 2px solid var(--stone);
-  border-radius: var(--radius);
-  background: var(--grass-dark);
-  color: var(--text-light);
-  text-align: left;
-  cursor: pointer;
-  transition: transform 0.12s ease, filter 0.12s ease;
-  width: 100%;
-}
-button.option:hover,
-button.option:focus-visible {
-  transform: translateY(-1px);
-  filter: brightness(1.1);
-  outline: none;
-}
-button.option.correct {
-  background: var(--grass);
-  border-color: var(--sky-light);
-}
-button.option.incorrect {
-  background: #b71c1c;
-  border-color: #ef5350;
+  gap: 0.75rem;
 }
 
-/* ------------------- Explanation ------------------- */
+button.option {
+  font-family: inherit;
+  font-size: clamp(0.9rem, 3.5vw, 1rem);
+  padding: clamp(0.8rem, 3vw, 1rem) 1rem;
+  background: #2a2a2a;
+  color: var(--text-main);
+  border: 2px solid var(--bg-card);
+  border-radius: var(--radius);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+button.option:hover,
+button.option:focus-visible {
+  background: #333333;
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+button.option.correct {
+  background: rgba(0, 173, 238, 0.15);
+  border-color: var(--accent);
+}
+
+button.option.incorrect {
+  background: rgba(231, 76, 60, 0.15);
+  border-color: var(--error);
+}
+
+/* ---------- Explanation ---------- */
 .explanation {
-  margin-top: 1.2rem;
-  padding: 0.9rem 1rem;
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
   font-size: clamp(0.8rem, 3vw, 0.9rem);
-  background: var(--stone);
-  border-left: 4px solid var(--sky-light);
-  border-radius: calc(var(--radius) / 2);
-  color: #222;
+  background: #262626;
+  color: var(--text-main);
+  border-left: 4px solid var(--accent);
+  border-radius: 0  var(--radius) var(--radius) 0;
   word-break: break-word;
 }
 
-/* ------------------- Footer (white text) ------------------- */
+/* ---------- Footer ---------- */
 footer {
   text-align: center;
-  padding: 1rem 0 1.5rem;
-  font-size: 0.8rem;
-  color: #fff;
+  padding: 1rem 0;
+  font-size: 0.85rem;
+  color: var(--text-main);
+  border-top: 1px solid #333333;
 }
+
 footer a {
-  color: #fff;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+footer a:hover {
   text-decoration: underline;
 }
-footer a:hover {
-  filter: brightness(1.2);
+
+/* ---------- Mobile / Responsive Tweaks ---------- */
+/* Ultra-small devices ≤360px */
+@media (max-width: 360px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+  .question {
+    font-size: 1rem;
+  }
+  button.option {
+    font-size: 0.85rem;
+    padding: 0.7rem 0.9rem;
+  }
 }
 
-/* ------------------- Responsive Tweaks ------------------- */
-/* Ultra-small phones */
-@media (max-width: 340px) {
-  header h1 { font-size: 0.9rem; }
-  .question { font-size: 0.85rem; }
-  button.option { font-size: 0.8rem; padding: 0.7rem 0.9rem; }
+/* Larger screens ≥900px */
+@media (min-width: 900px) {
+  main {
+    margin: 3rem auto;
+  }
+  .card {
+    padding: 2rem 1.8rem;
+  }
 }
 
-/* Tablets & up */
-@media (min-width: 800px) {
-  main { margin: 2rem auto; }
-  .card { padding: 1.8rem 1.4rem; }
-}
-
-/* ------------------- Reduced Motion ------------------- */
+/* ---------- Accessibility: Reduced Motion ---------- */
 @media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; }
+  * {
+    transition: none !important;
+  }
 }
