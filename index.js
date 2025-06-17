@@ -1,83 +1,84 @@
-// Global variables
-let currentIndex = 0;
+/* -------- STATE -------- */
+let idx = 0;
 let score = 0;
-let questions = [];
+let quizData = [];
 
-// DOM reference
+/* -------- DOM -------- */
 const container = document.getElementById('quiz-container');
 
-// Load questions from q.json
-async function loadQuizData() {
+/* -------- INIT -------- */
+(async function init() {
   try {
-    const response = await fetch('q.json');
-    questions = await response.json();
-    showQuestion();
+    const res = await fetch('q.json');
+    quizData = await res.json();
+    renderQuestion();
   } catch (err) {
-    container.innerHTML = `<p>Failed to load quiz data. Please check q.json.</p>`;
+    container.innerHTML = `<p style="text-align:center">❌ Could not load <strong>q.json</strong>.<br>Run the page through a local server.</p>`;
     console.error(err);
   }
-}
+})();
 
-// Display a single question
-function showQuestion() {
-  if (currentIndex >= questions.length) {
-    return showFinalScore();
-  }
+/* -------- RENDERERS -------- */
+function renderQuestion() {
+  if (idx >= quizData.length) return renderScore();
 
-  const questionObj = questions[currentIndex];
+  const { question, options, correctAnswer, explanation } = quizData[idx];
+
   const card = document.createElement('div');
   card.className = 'card';
 
-  const questionText = document.createElement('div');
-  questionText.className = 'question';
-  questionText.textContent = `${currentIndex + 1}. ${questionObj.question}`;
-  card.appendChild(questionText);
+  /* Question text */
+  card.innerHTML = `<div class="question">${idx + 1}. ${question}</div>`;
 
-  const optionsContainer = document.createElement('div');
-  optionsContainer.className = 'options';
+  /* Options */
+  const opts = document.createElement('div');
+  opts.className = 'options';
 
-  for (const [key, value] of Object.entries(questionObj.options)) {
-    const button = document.createElement('button');
-    button.className = 'option';
-    button.textContent = `${key}: ${value}`;
-    button.addEventListener('click', () => handleAnswer(button, key, questionObj.correctAnswer));
-    optionsContainer.appendChild(button);
-  }
+  Object.entries(options).forEach(([key, text]) => {
+    const btn = document.createElement('button');
+    btn.className = 'option';
+    btn.textContent = `${key}: ${text}`;
+    btn.addEventListener('click', () => handleAnswer(btn, key, correctAnswer, explanation));
+    opts.appendChild(btn);
+  });
 
-  card.appendChild(optionsContainer);
+  card.appendChild(opts);
   container.innerHTML = '';
   container.appendChild(card);
 }
 
-// Handle user's answer
-function handleAnswer(button, selectedKey, correctKey) {
-  const buttons = document.querySelectorAll('.option');
-  buttons.forEach(btn => btn.disabled = true);
-
-  if (selectedKey === correctKey) {
-    button.classList.add('correct');
-    score++;
-  } else {
-    button.classList.add('incorrect');
-    const correctBtn = Array.from(buttons).find(btn => btn.textContent.startsWith(correctKey));
-    if (correctBtn) correctBtn.classList.add('correct');
-  }
-
-  setTimeout(() => {
-    currentIndex++;
-    showQuestion();
-  }, 1200);
-}
-
-// Show final score
-function showFinalScore() {
+function renderScore() {
   container.innerHTML = `
-    <div class="card" id="score-container">
-      <p>Quiz completed!</p>
-      <p>Your score: ${score} out of ${questions.length}</p>
+    <div class="card" id="score">
+      <p style="font-size:1.3rem;font-weight:600;margin-bottom:0.5rem;">Quiz finished!</p>
+      <p>You scored <strong>${score}</strong> / <strong>${quizData.length}</strong>.</p>
     </div>
   `;
 }
 
-// Initialize the quiz
-loadQuizData();
+/* -------- LOGIC -------- */
+function handleAnswer(btn, selected, correct, explanation) {
+  const buttons = [...document.querySelectorAll('.option')];
+  buttons.forEach(b => (b.disabled = true));
+
+  if (selected === correct) {
+    btn.classList.add('correct');
+    score++;
+  } else {
+    btn.classList.add('incorrect');
+    const correctBtn = buttons.find(b => b.textContent.startsWith(correct));
+    if (correctBtn) correctBtn.classList.add('correct');
+  }
+
+  /* Show explanation */
+  const expDiv = document.createElement('div');
+  expDiv.className = 'explanation';
+  expDiv.textContent = explanation;
+  btn.closest('.card').appendChild(expDiv);
+
+  /* Next question after delay */
+  setTimeout(() => {
+    idx++;
+    renderQuestion();
+  }, 2000);
+}
