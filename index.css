@@ -1,147 +1,185 @@
-/* =========================================================
-   Cyberpunk Lite – Mobile-First index.css  (v2)
-   Scales fluidly from 320 px to desktop
-   ========================================================= */
+/* ======================================================
+   Minecraft-Inspired Responsive Theme  – index.css
+   Compatible with your existing HTML & JS
+   Ultra-mobile-first, pixel-art vibes, blocky typography
+   ====================================================== */
 
-/* ---------- Font Imports ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@400;600&display=swap');
+/* ------------------- Font Imports ------------------- */
+/* Minecraft style heading & body fonts */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;500&display=swap');
 
-/* ---------- Design Tokens ---------- */
+/* ------------------- Design Tokens ------------------- */
 :root {
-  /* Neon Palette */
-  --cy: #02bcd4;
-  --pk: #d9366e;
-  --pr: #7f5aff;
-  --yl: #ffd447;
+  /* Minecraft palette */
+  --grass-green: #4caf50;
+  --grass-green-dark: #388e3c;
+  --dirt-brown: #795548;
+  --stone-gray: #9e9e9e;
+  --sky-blue: #57c4ff;
+  --sky-blue-dark: #1ea0ff;
+  --text-light: #f0f0f0;
+  --text-dark: #222;
 
-  /* Surfaces */
-  --bg-main: #0e1018;
-  --bg-card: rgba(24, 26, 36, 0.92);
+  /* Layout */
+  --radius: 6px;               /* blocky but still clickable */
+  --gap: 0.9rem;
+  --max-width: 720px;
+  --safe-padding: env(safe-area-inset, 0); /* iOS notch safety */
 
-  /* Radii & Gaps */
-  --radius: 14px;
-  --gap: 1rem;
+  /* Shadows / pixel-style outlines */
+  --pixel-shadow: 0 0 0 2px var(--stone-gray);
 }
 
-/* ---------- Global Reset & Base ---------- */
+/* -------------- Global Reset & Base -------------- */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: var(--bg-main);
-  color: #dde;
-  line-height: 1.55;
+  padding: var(--safe-padding);
+  font-family: 'Roboto', sans-serif;
+  background: var(--sky-blue);
+  background: linear-gradient(to bottom, var(--sky-blue) 0%, var(--sky-blue-dark) 100%);
+  color: var(--text-light);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-/* ---------- Header ---------- */
+/* ------------------- Header ------------------- */
 header {
+  background: var(--grass-green);
+  color: var(--text-light);
   text-align: center;
-  padding: clamp(1.5rem, 6vw, 2.5rem) 1rem;
-  background: linear-gradient(135deg, var(--pk) 0%, var(--cy) 100%);
-  background-size: 400% 400%;
-  animation: headerShift 18s ease infinite;
+  padding: clamp(1.2rem, 5vw, 2rem) 1rem;
+  box-shadow: var(--pixel-shadow);
 }
-@keyframes headerShift { 0%,100% {background-position:0% 50%} 50%{background-position:100% 50%} }
 
 header h1 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: clamp(1.4rem, 5.5vw, 2.3rem);
-  letter-spacing: .06em;
-  color: var(--yl);
-  text-shadow: 0 0 3px var(--yl);
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(1rem, 4.5vw, 1.6rem);
+  line-height: 1.35;
+  text-shadow: 0 2px 0 var(--grass-green-dark), 0 0 4px #000;
+  white-space: pre-wrap;
 }
 
-/* ---------- Main Layout ---------- */
+/* ------------------- Main ------------------- */
 main {
   flex: 1;
   width: 100%;
-  max-width: 760px;
-  margin-inline: auto;               /* centers horizontally */
-  padding-inline: clamp(1rem, 4vw, 2rem);
-  padding-block: clamp(1.5rem, 4vw, 2.5rem);
+  max-width: var(--max-width);
+  padding: clamp(1rem, 4vw, 1.5rem);
+  margin-inline: auto;
 }
 
-/* ---------- Quiz Card ---------- */
+/* ------------------- Card ------------------- */
 .card {
-  background: var(--bg-card);
-  border: 1px solid var(--pr);
+  background: var(--dirt-brown);
+  border: 4px solid var(--stone-gray);
   border-radius: var(--radius);
-  padding: clamp(1.25rem, 5vw, 1.9rem);
-  box-shadow: 0 4px 18px rgba(0,0,0,.35);
-  backdrop-filter: blur(4px);
+  padding: clamp(1rem, 4vw, 1.6rem);
+  box-shadow: var(--pixel-shadow);
+  overflow: hidden;
 }
 
-/* Question */
+/* Question Text */
 .question {
-  font-size: clamp(1.05rem, 3.8vw, 1.25rem);
-  font-weight: 600;
-  margin-bottom: 1.2rem;
-  color: var(--cy);
-  text-shadow: 0 0 4px var(--cy);
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(0.85rem, 3.5vw, 1.1rem);
+  color: var(--sky-blue);
+  margin-bottom: 1.1rem;
+  word-wrap: break-word;
 }
 
-/* ---------- Answer Options ---------- */
+/* ------------------- Options ------------------- */
 .options {
   display: flex;
   flex-direction: column;
   gap: var(--gap);
 }
 
+/* Base button style */
 button.option {
-  font-size: clamp(0.9rem, 3.5vw, 1rem);
-  padding: 0.9rem 1.1rem;
-  border: 2px solid transparent;
+  font-size: clamp(0.75rem, 3.2vw, 0.95rem);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  padding: 0.9rem 1rem;
+  border: 3px solid var(--stone-gray);
   border-radius: var(--radius);
-  background: rgba(255,255,255,.05);
-  color: #ecf0ff;
+  background: var(--grass-green-dark);
+  color: var(--text-light);
   cursor: pointer;
-  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+  transition: transform 0.12s ease, filter 0.12s ease;
+  width: 100%;
+  text-align: left;
 }
 
+/* Hover / focus */
 button.option:hover,
 button.option:focus-visible {
   transform: translateY(-2px);
-  border-color: var(--cy);
-  box-shadow: 0 0 6px var(--cy);
+  filter: brightness(1.15);
   outline: none;
 }
 
+/* Correct & Incorrect feedback */
 button.option.correct {
-  background: rgba(2,188,212,.18);
-  border-color: var(--cy);
+  background: var(--grass-green);
+  border-color: var(--sky-blue);
 }
 button.option.incorrect {
-  background: rgba(217,54,110,.18);
-  border-color: var(--pk);
+  background: #b71c1c;
+  border-color: #ef5350;
 }
 
-/* ---------- Explanation ---------- */
+/* ------------------- Explanation ------------------- */
 .explanation {
-  margin-top: 1.6rem;
-  padding: 1rem 1.2rem;
-  font-size: clamp(0.85rem, 3.2vw, 0.95rem);
-  border-left: 4px solid var(--pr);
-  background: rgba(127, 90, 255, .12);
-  border-radius: calc(var(--radius)/2);
+  margin-top: 1.3rem;
+  padding: 0.9rem 1.1rem;
+  font-size: clamp(0.7rem, 3vw, 0.85rem);
+  background: var(--stone-gray);
+  border-left: 4px solid var(--sky-blue);
+  border-radius: var(--radius);
+  color: var(--text-dark);
 }
 
-/* ---------- Footer ---------- */
+/* ------------------- Footer ------------------- */
 footer {
   text-align: center;
-  padding-block: 1.4rem 2rem;
-  font-size: 0.85rem;
-  color: var(--pr);
+  padding: 1rem 0 1.5rem;
+  font-size: 0.8rem;
+  color: var(--text-dark);
 }
-footer a { color: var(--cy); text-decoration: none; }
-footer a:hover { text-shadow: 0 0 4px var(--cy); }
 
-/* ---------- Accessibility: prefers-reduced-motion ---------- */
+footer a {
+  color: var(--grass-green-dark);
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ------------------- Media Tweaks ------------------- */
+/* Ultra-small phones (≤340px) */
+@media (max-width: 340px) {
+  header h1 { font-size: 0.9rem; }
+  .question { font-size: 0.78rem; }
+  button.option { font-size: 0.7rem; padding: 0.75rem 0.8rem; }
+}
+
+/* Larger tablets & desktop (≥800px) */
+@media (min-width: 800px) {
+  body {
+    background: var(--sky-blue);
+    background-image: url('https://i.imgur.com/64gnSuK.png'); /* subtle pixel sky */
+    background-size: cover;
+  }
+  button.option { max-width: 95%; margin-inline: auto; }
+}
+
+/* ------------------- Reduced Motion ------------------- */
 @media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; }
-  button.option { transition: none !important; }
+  * { transition: none !important; }
 }
