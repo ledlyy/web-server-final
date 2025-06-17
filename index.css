@@ -185,6 +185,35 @@ footer a:hover {
   transform: translateY(-2px);
   outline: none;
 }
+/* Shuffle Questions button */
+.shuffle-btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: clamp(0.6rem, 2.5vw, 1rem) 1.2rem;
+  font-size: clamp(0.85rem, 3vw, 1rem);
+  background: var(--accent);
+  color: var(--text-main);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: filter 0.2s ease, transform 0.15s ease;
+}
+
+.shuffle-btn:hover,
+.shuffle-btn:focus-visible {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+/* Ensure full-width on very small screens */
+@media (max-width: 360px) {
+  .shuffle-btn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
 
 
 /* ---------- Mobile / Responsive Tweaks ---------- */

@@ -4,13 +4,23 @@ let score = 0;
 let quizData = [];
 
 /* -------- DOM -------- */
-const container = document.getElementById('quiz-container');
+const container   = document.getElementById('quiz-container');
+const shuffleBtn  = document.getElementById('shuffle-btn');
 
 /* -------- INIT -------- */
 (async function init() {
   try {
     const res = await fetch('q.json');
     quizData = await res.json();
+
+    // Shuffle handler
+    shuffleBtn.addEventListener('click', () => {
+      shuffleArray(quizData);
+      idx = 0;
+      score = 0;
+      renderQuestion();
+    });
+
     renderQuestion();
   } catch (err) {
     container.innerHTML = `
@@ -24,22 +34,15 @@ const container = document.getElementById('quiz-container');
 
 /* -------- RENDERERS -------- */
 function renderQuestion() {
-  if (idx >= quizData.length) {
-    return renderScore();
-  }
+  if (idx >= quizData.length) return renderScore();
 
   const { question, options } = quizData[idx];
-
   const card = document.createElement('div');
   card.className = 'card';
-
-  /* Question text */
   card.innerHTML = `<div class="question">${idx + 1}. ${question}</div>`;
 
-  /* Options */
   const opts = document.createElement('div');
   opts.className = 'options';
-
   Object.entries(options).forEach(([key, text]) => {
     const btn = document.createElement('button');
     btn.className = 'option';
@@ -68,11 +71,9 @@ function renderScore() {
 
 /* -------- LOGIC -------- */
 function handleAnswer(btn, selected, correct, explanation) {
-  // Disable all option buttons
   const buttons = [...document.querySelectorAll('.option')];
   buttons.forEach(b => b.disabled = true);
 
-  // Mark correct/incorrect
   if (selected === correct) {
     btn.classList.add('correct');
     score++;
@@ -82,13 +83,13 @@ function handleAnswer(btn, selected, correct, explanation) {
     if (correctBtn) correctBtn.classList.add('correct');
   }
 
-  // Show explanation
+  // Explanation
   const expDiv = document.createElement('div');
   expDiv.className = 'explanation';
   expDiv.textContent = explanation;
   btn.closest('.card').appendChild(expDiv);
 
-  // Create & insert Next Question button
+  // Next / Score button
   const nextBtn = document.createElement('button');
   nextBtn.className = 'next-btn';
   nextBtn.textContent = idx < quizData.length - 1 ? 'Next Question' : 'See Score';
@@ -96,6 +97,14 @@ function handleAnswer(btn, selected, correct, explanation) {
     idx++;
     renderQuestion();
   });
-
   btn.closest('.card').appendChild(nextBtn);
+}
+
+/* -------- UTILITIES -------- */
+function shuffleArray(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
 }
