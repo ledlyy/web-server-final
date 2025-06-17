@@ -9,7 +9,16 @@
 <body>
   <header>
     <h1>Web Server Programming Quiz</h1>
-    <button id="shuffle-btn" class="shuffle-btn">Shuffle Questions</button>
+    
+    <div class="controls">
+      <label for="db-select"><strong>Choose Quiz Set:</strong></label>
+      <select id="db-select">
+        <option value="q.json">Database 1</option>
+        <option value="q2.json">Database 2</option>
+      </select>
+
+      <button id="shuffle-btn" class="shuffle-btn">Shuffle Questions</button>
+    </div>
   </header>
 
   <main id="quiz-container">
