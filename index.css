@@ -1,7 +1,6 @@
-
 /* =========================================================
-   Cyberpunk 2.0 – index.css
-   Modern neon-edge design, fully responsive & accessible
+   Cyberpunk Lite – index.css
+   Dialed-back neon, subtler glow, same modern feel
    ========================================================= */
 
 /* ---------- Font Imports ---------- */
@@ -9,76 +8,69 @@
 
 /* ---------- Design Tokens ---------- */
 :root {
-  /* Neon Palette */
-  --cy: #00eaff;
-  --pk: #ff006e;
-  --pr: #9c6bff;
-  --yl: #ffe600;
+  /* Muted Neon Palette */
+  --cy: #02bcd4;     /* softer cyan  */
+  --pk: #d9366e;     /* muted pink   */
+  --pr: #7f5aff;     /* calm purple  */
+  --yl: #ffd447;     /* warm accent  */
 
   /* Surfaces */
-  --bg-main: #0b0b14;
-  --bg-card: rgba(25, 25, 34, 0.9);
+  --bg-main: #0e1018;                    /* deep navy */
+  --bg-card: rgba(24, 26, 36, 0.92);     /* dark glass */
 
-  /* Typography & Spacing */
+  /* Typography & Layout */
   --font-base: 'Inter', sans-serif;
   --font-heading: 'Orbitron', sans-serif;
-  --radius: 16px;
+  --radius: 14px;
   --gap: 1.1rem;
 
-  /* Glow */
-  --glow-cy: 0 0 6px var(--cy), 0 0 12px var(--cy);
-  --glow-pk: 0 0 6px var(--pk), 0 0 12px var(--pk);
+  /* Reduced Glow */
+  --glow-cy: 0 0 4px var(--cy);
+  --glow-pk: 0 0 4px var(--pk);
 }
 
-/* ---------- Global Reset ---------- */
+/* ---------- Resets ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body {
   font-family: var(--font-base);
   background: var(--bg-main);
-  color: #e5e5ff;
+  color: #d0d0e4;
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
 }
 
 /* ---------- Header ---------- */
 header {
   text-align: center;
-  padding: 2.5rem 1rem;
-  position: relative;
-  background: radial-gradient(circle at 20% 10%, var(--pk) 0%, transparent 70%),
-              radial-gradient(circle at 90% 90%, var(--cy) 0%, transparent 70%);
-  overflow: hidden;
-  isolation: isolate;
+  padding: 2rem 1rem 1.8rem;
+  background: linear-gradient(135deg, var(--pk) 0%, var(--cy) 100%);
+  background-size: 400% 400%;
+  animation: headerShift 18s ease infinite;
 }
-header h1 {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 5vw, 2.6rem);
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--yl);
-  text-shadow: 0 0 4px var(--yl), 0 0 10px var(--yl);
-  position: relative;
-  animation: headerFlicker 4s linear infinite both;
+@keyframes headerShift {
+  0%,100% { background-position: 0% 50%; }
+  50%     { background-position: 100% 50%; }
 }
 
-/* subtle random flicker */
-@keyframes headerFlicker {
-  0%, 19%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
-  21%, 24%, 55% { opacity: 0.7; }
+header h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 4.5vw, 2.3rem);
+  letter-spacing: .06em;
+  color: var(--yl);
+  text-shadow: 0 0 3px var(--yl);
 }
 
 /* ---------- Main ---------- */
 main {
-  width: 100%;
-  max-width: 780px;
-  margin: 2.5rem auto;
-  padding: 0 1rem;
   flex: 1;
+  width: 100%;
+  max-width: 760px;
+  margin: 2.2rem auto;
+  padding: 0 1rem;
 }
 
 /* ---------- Card ---------- */
@@ -86,34 +78,16 @@ main {
   background: var(--bg-card);
   border: 1px solid var(--pr);
   border-radius: var(--radius);
-  padding: 2rem 1.75rem;
-  box-shadow: var(--glow-pk);
-  backdrop-filter: blur(6px) saturate(140%);
-  position: relative;
-  overflow: hidden;
+  padding: 1.9rem 1.6rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,.3);
+  backdrop-filter: blur(4px);
 }
 
-/* animated rotating border aura */
-.card::before {
-  content: '';
-  position: absolute;
-  inset: -3px;
-  background: conic-gradient(from 0deg,
-              var(--pk),
-              var(--cy),
-              var(--pr),
-              var(--pk));
-  z-index: -1;
-  filter: blur(22px);
-  animation: rotateAura 8s linear infinite;
-}
-@keyframes rotateAura { to { transform: rotate(360deg); } }
-
-/* ---------- Question ---------- */
+/* Question */
 .question {
-  font-size: 1.28rem;
+  font-size: 1.22rem;
   font-weight: 600;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.3rem;
   color: var(--cy);
   text-shadow: var(--glow-cy);
 }
@@ -124,95 +98,69 @@ main {
   gap: var(--gap);
 }
 
-/* base button style */
 button.option {
   width: 100%;
   font-size: 1rem;
-  padding: 1rem 1.25rem;
+  padding: .95rem 1.1rem;
   border: 2px solid transparent;
   border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.06);
-  color: #f0f0f0;
+  background: rgba(255,255,255,.045);
+  color: #e2e2e2;
   cursor: pointer;
-  transition: transform 0.15s ease, border-color 0.15s ease,
-              box-shadow 0.15s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-/* neon edge on hover */
-button.option::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: var(--radius);
-  background: linear-gradient(135deg, var(--cy), var(--pk));
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-button.option:hover::after,
-button.option:focus-visible::after {
-  opacity: 0.35;
-  mix-blend-mode: overlay;
+  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
 }
 
 button.option:hover,
 button.option:focus-visible {
-  outline: none;
   transform: translateY(-2px);
   border-color: var(--cy);
   box-shadow: var(--glow-cy);
+  outline: none;
 }
 
+/* Feedback States */
 button.option.correct {
-  background: rgba(0, 234, 255, 0.18);
+  background: rgba(2, 188, 212, .15);
   border-color: var(--cy);
-  box-shadow: var(--glow-cy);
 }
 button.option.incorrect {
-  background: rgba(255, 0, 110, 0.18);
+  background: rgba(217, 54, 110, .15);
   border-color: var(--pk);
-  box-shadow: var(--glow-pk);
 }
 
 /* ---------- Explanation ---------- */
 .explanation {
-  margin-top: 1.9rem;
-  padding: 1rem 1.3rem;
-  font-size: 0.95rem;
+  margin-top: 1.7rem;
+  padding: 1rem 1.25rem;
+  font-size: .95rem;
   border-left: 4px solid var(--pr);
-  background: rgba(156, 107, 255, 0.12);
-  border-radius: calc(var(--radius) / 2);
+  background: rgba(127, 90, 255, .12);
+  border-radius: calc(var(--radius)/2);
 }
 
 /* ---------- Footer ---------- */
 footer {
   text-align: center;
-  padding: 1.4rem 0 2.2rem;
-  font-size: 0.88rem;
+  padding: 1.2rem 0 2rem;
+  font-size: .85rem;
   color: var(--pr);
 }
 footer a {
   color: var(--cy);
   text-decoration: none;
 }
-footer a:hover {
-  text-shadow: var(--glow-cy);
-}
+footer a:hover { text-shadow: var(--glow-cy); }
 
-/* ---------- Responsiveness ---------- */
+/* ---------- Mobile Tweaks ---------- */
 @media (max-width: 480px) {
-  header { padding: 2rem 1rem; }
-  .card  { padding: 1.6rem 1.2rem; }
+  header { padding: 1.8rem 1rem 1.4rem; }
+  .card  { padding: 1.5rem 1.2rem; }
   .question { font-size: 1.1rem; }
-  button.option { font-size: 0.95rem; padding: 0.9rem 1rem; }
+  button.option { font-size: .94rem; padding: .9rem 1rem; }
 }
 
-/* ---------- Accessibility: reduces motion ---------- */
+/* ---------- Reduce-Motion ---------- */
 @media (prefers-reduced-motion: reduce) {
-  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
-  button.option,
-  button.option:hover,
-  button.option:focus-visible,
-  .options { transition: none !important; }
+  * { animation: none !important; }
+  button.option { transition: none !important; }
 }
