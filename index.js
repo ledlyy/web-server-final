@@ -13,17 +13,16 @@ const shuffleBtn = document.getElementById('shuffle-btn');
     const res = await fetch('q.json');
     quizData = await res.json();
 
-    // 1. Read query param and clamp
+    // Read query param and clamp to range
     const params = new URLSearchParams(window.location.search);
     const qParam = parseInt(params.get('q'), 10);
     if (!isNaN(qParam) && qParam >= 1 && qParam <= quizData.length) {
       idx = qParam - 1;
     }
 
-    // 2. Shuffle handler resets idx and score, updates URL, then renders
     shuffleBtn.addEventListener('click', () => {
       shuffleArray(quizData);
-      idx   = 0;
+      idx = 0;
       score = 0;
       updateURL(idx);
       renderQuestion();
@@ -46,7 +45,6 @@ function renderQuestion() {
     return renderScore();
   }
 
-  // Update URL so bookmarking/linking stays in sync
   updateURL(idx);
 
   const { question, options } = quizData[idx];
@@ -56,6 +54,7 @@ function renderQuestion() {
 
   const opts = document.createElement('div');
   opts.className = 'options';
+
   Object.entries(options).forEach(([key, text]) => {
     const btn = document.createElement('button');
     btn.className = 'option';
@@ -96,13 +95,31 @@ function handleAnswer(btn, selected, correct, explanation) {
     if (correctBtn) correctBtn.classList.add('correct');
   }
 
-  // Show explanation
+  const card = btn.closest('.card');
+
+  // Explanation
   const expDiv = document.createElement('div');
   expDiv.className = 'explanation';
   expDiv.textContent = explanation;
-  btn.closest('.card').appendChild(expDiv);
+  card.appendChild(expDiv);
 
-  // Next / Score button
+  // Navigation buttons
+  const navWrapper = document.createElement('div');
+  navWrapper.className = 'nav-buttons';
+
+  // Previous
+  if (idx > 0) {
+    const prevBtn = document.createElement('button');
+    prevBtn.className = 'prev-btn';
+    prevBtn.textContent = 'Previous';
+    prevBtn.addEventListener('click', () => {
+      idx--;
+      renderQuestion();
+    });
+    navWrapper.appendChild(prevBtn);
+  }
+
+  // Next / Score
   const nextBtn = document.createElement('button');
   nextBtn.className = 'next-btn';
   nextBtn.textContent = idx < quizData.length - 1 ? 'Next Question' : 'See Score';
@@ -110,7 +127,9 @@ function handleAnswer(btn, selected, correct, explanation) {
     idx++;
     renderQuestion();
   });
-  btn.closest('.card').appendChild(nextBtn);
+  navWrapper.appendChild(nextBtn);
+
+  card.appendChild(navWrapper);
 }
 
 /* -------- UTILITIES -------- */
@@ -121,7 +140,6 @@ function shuffleArray(arr) {
   }
 }
 
-// Update the browser URL to ?q=currentQuestionIndex+1 without reloading
 function updateURL(questionIndex) {
   const newUrl = `${window.location.pathname}?q=${questionIndex + 1}`;
   history.replaceState(null, '', newUrl);

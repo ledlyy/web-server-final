@@ -207,6 +207,34 @@ footer a:hover {
   outline: none;
 }
 
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.prev-btn,
+.next-btn {
+  flex: 1 1 auto;
+  padding: 0.8rem 1rem;
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  background: var(--accent);
+  color: var(--text-main);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background: rgba(0, 173, 238, 0.8);
+  transform: translateY(-2px);
+}
+
 /* Ensure full-width on very small screens */
 @media (max-width: 360px) {
   .shuffle-btn {
