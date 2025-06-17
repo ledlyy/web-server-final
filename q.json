@@ -1,0 +1,1164 @@
+[
+  {
+    "question": "What is a key characteristic of a RESTful API?",
+    "options": {
+      "A": "It uses SOAP as a communication protocol",
+      "B": "It maintains client session state on the server",
+      "C": "It relies on standard HTTP methods like GET and POST",
+      "D": "It requires XML for data exchange"
+    },
+    "correctAnswer": "C",
+    "explanation": "RESTful APIs use HTTP methods like GET, POST, PUT, and DELETE to perform CRUD operations."
+  },
+  {
+    "question": "In RESTful APIs, what does the term \"stateless\" mean?",
+    "options": {
+      "A": "The API keeps track of user sessions",
+      "B": "Each request must contain all necessary information",
+      "C": "The server caches the state of each user",
+      "D": "Clients and servers are tightly coupled"
+    },
+    "correctAnswer": "B",
+    "explanation": "Statelessness means that each request is independent and contains all the information needed for processing."
+  },
+  {
+    "question": "Which HTTP method is typically used to retrieve data from a REST API?",
+    "options": {
+      "A": "POST",
+      "B": "DELETE",
+      "C": "GET",
+      "D": "PUT"
+    },
+    "correctAnswer": "C",
+    "explanation": "The GET method is used to retrieve resources from the server."
+  },
+  {
+    "question": "Which annotation in ASP.NET Core is used to declare an API controller?",
+    "options": {
+      "A": "[Route]",
+      "B": "[Controller]",
+      "C": "[ApiController]",
+      "D": "[WebApi]"
+    },
+    "correctAnswer": "C",
+    "explanation": "The [ApiController] attribute designates a class as a Web API controller."
+  },
+  {
+    "question": "Which HTTP method is used to update existing data in a RESTful service?",
+    "options": {
+      "A": "GET",
+      "B": "POST",
+      "C": "PUT",
+      "D": "CONNECT"
+    },
+    "correctAnswer": "C",
+    "explanation": "PUT is used for updating existing resources in REST APIs."
+  },
+  {
+    "question": "What is the default route pattern used in WebApiConfig.cs?",
+    "options": {
+      "A": "/controller/action/id",
+      "B": "api/controller/id",
+      "C": "/api/action/controller",
+      "D": "/route/api/controller"
+    },
+    "correctAnswer": "B",
+    "explanation": "The default route is defined as \"api/{controller}/{id}\" in WebApiConfig.cs."
+  },
+  {
+    "question": "Which method is used to add a new task to the database in a Web API controller?",
+    "options": {
+      "A": "GetAllItems()",
+      "B": "CreateItem()",
+      "C": "DeleteItem()",
+      "D": "UpdateItem()"
+    },
+    "correctAnswer": "B",
+    "explanation": "CreateItem() handles POST requests to add new tasks."
+  },
+  {
+    "question": "What is returned if a resource is not found during a GET request in the controller?",
+    "options": {
+      "A": "Ok()",
+      "B": "BadRequest()",
+      "C": "NotFound()",
+      "D": "Redirect()"
+    },
+    "correctAnswer": "C",
+    "explanation": "If the requested item is not found, NotFound() is returned."
+  },
+  {
+    "question": "In JSON, how are key-value pairs formatted?",
+    "options": {
+      "A": "key = \"value\"",
+      "B": "key: value;",
+      "C": "\"key\": \"value\"",
+      "D": "<key>value</key>"
+    },
+    "correctAnswer": "C",
+    "explanation": "JSON uses double quotes for both keys and string values."
+  },
+  {
+    "question": "What is the purpose of GlobalConfiguration.Configure() in Global.asax?",
+    "options": {
+      "A": "It initializes the database",
+      "B": "It sets up routing for MVC views",
+      "C": "It registers the Web API configuration",
+      "D": "It starts the application in debug mode"
+    },
+    "correctAnswer": "C",
+    "explanation": "This method links WebApiConfig routing with the application startup process."
+  },
+  {
+    "question": "Which tool is commonly used to test Web API endpoints manually?",
+    "options": {
+      "A": "Excel",
+      "B": "Postman",
+      "C": "IIS Express",
+      "D": "Entity Framework"
+    },
+    "correctAnswer": "B",
+    "explanation": "Postman is widely used to test API requests such as GET, POST, PUT, DELETE."
+  },
+  {
+    "question": "What does the [FromBody] attribute in ASP.NET indicate?",
+    "options": {
+      "A": "The parameter comes from the query string",
+      "B": "The parameter comes from the URL",
+      "C": "The parameter is extracted from the HTTP body",
+      "D": "The parameter is ignored"
+    },
+    "correctAnswer": "C",
+    "explanation": "[FromBody] binds the method parameter to the data in the body of the request."
+  },
+  {
+    "question": "Which of the following would be a valid endpoint for deleting a task with ID 5?",
+    "options": {
+      "A": "DELETE /api/tasks/5",
+      "B": "POST /api/delete/5",
+      "C": "PUT /tasks?id=5",
+      "D": "GET /delete/5"
+    },
+    "correctAnswer": "A",
+    "explanation": "RESTful services use DELETE method at a resource URI like /api/tasks/5."
+  },
+  {
+    "question": "What does 'return Ok(updatedItem);' mean in an API controller?",
+    "options": {
+      "A": "An error occurred during update",
+      "B": "The request was accepted but not processed",
+      "C": "The item was updated and returned in the response",
+      "D": "The item was deleted successfully"
+    },
+    "correctAnswer": "C",
+    "explanation": "Ok() returns HTTP 200 OK status along with the updated item in the response."
+  },
+  {
+    "question": "In REST architecture, what is typically considered a “resource”?",
+    "options": {
+      "A": "A function on the server",
+      "B": "A method in the API controller",
+      "C": "A data entity such as /users or /tasks",
+      "D": "A configuration file"
+    },
+    "correctAnswer": "C",
+    "explanation": "Resources in REST are data entities identified by URIs, like /tasks."
+  },
+  {
+    "question": "What is the main purpose of API consumption in frontend development?",
+    "options": {
+      "A": "To access the database directly from the frontend",
+      "B": "To compile frontend code faster",
+      "C": "To connect frontend applications to backend services",
+      "D": "To render server-side templates"
+    },
+    "correctAnswer": "C",
+    "explanation": "API consumption allows frontend apps to fetch or manipulate data via backend APIs, improving modularity and scalability."
+  },
+  {
+    "question": "Which HTTP method is commonly used to retrieve data from a server?",
+    "options": {
+      "A": "POST",
+      "B": "PUT",
+      "C": "GET",
+      "D": "DELETE"
+    },
+    "correctAnswer": "C",
+    "explanation": "GET is the standard HTTP method used to request and retrieve data from a server."
+  },
+  {
+    "question": "Which of the following is NOT a benefit of using the Fetch API?",
+    "options": {
+      "A": "Supports promises for cleaner code",
+      "B": "Built-in browser support",
+      "C": "Supports request cancellation and progress tracking",
+      "D": "Convenient for handling JSON"
+    },
+    "correctAnswer": "C",
+    "explanation": "Unlike XMLHttpRequest, the Fetch API does not support request cancellation or progress tracking."
+  },
+  {
+    "question": "What does AJAX stand for?",
+    "options": {
+      "A": "Asynchronous JavaScript and XML",
+      "B": "Automated JSON and XML",
+      "C": "API JavaScript and XHTML",
+      "D": "Asynchronous JSON and XML"
+    },
+    "correctAnswer": "A",
+    "explanation": "AJAX stands for Asynchronous JavaScript and XML, an older technology for making asynchronous web requests."
+  },
+  {
+    "question": "Which of the following is a key advantage of using jQuery’s `ajax()` method?",
+    "options": {
+      "A": "Built-in support for modern promises",
+      "B": "Supports canceling requests and progress tracking",
+      "C": "Requires no internet connection",
+      "D": "Works only with Angular"
+    },
+    "correctAnswer": "B",
+    "explanation": "jQuery's ajax() supports features like canceling requests and tracking progress, which are not available in Fetch API."
+  },
+  {
+    "question": "Which of the following is required to use Angular’s `HttpClient` service for API calls?",
+    "options": {
+      "A": "React library",
+      "B": "PostService module",
+      "C": "HttpClient from @angular/common/http",
+      "D": "jQuery"
+    },
+    "correctAnswer": "C",
+    "explanation": "The HttpClient module from @angular/common/http is necessary for making HTTP requests in Angular."
+  },
+  {
+    "question": "Which type of data binding does React use?",
+    "options": {
+      "A": "Two-way binding",
+      "B": "No data binding",
+      "C": "One-way binding",
+      "D": "Real-time binding"
+    },
+    "correctAnswer": "C",
+    "explanation": "React uses one-way data binding, allowing changes to flow from data model to UI but not vice versa automatically."
+  },
+  {
+    "question": "What is one key performance-related feature of React compared to Angular?",
+    "options": {
+      "A": "Uses real DOM",
+      "B": "Uses virtual DOM",
+      "C": "Built with TypeScript",
+      "D": "Automatic two-way data binding"
+    },
+    "correctAnswer": "B",
+    "explanation": "React uses a virtual DOM, which improves performance by reducing the number of direct DOM manipulations."
+  },
+  {
+    "question": "Which command is used to create a new React application?",
+    "options": {
+      "A": "ng new my-app",
+      "B": "npm create-react-app",
+      "C": "npx create-react-app",
+      "D": "react install app"
+    },
+    "correctAnswer": "C",
+    "explanation": "`npx create-react-app` is the standard command to bootstrap a new React application."
+  },
+  {
+    "question": "In the Fetch API, how are errors typically handled?",
+    "options": {
+      "A": "Using alert boxes",
+      "B": "With try-catch inside loops",
+      "C": "Using `.catch()` on the promise chain",
+      "D": "With XMLHttpRequest"
+    },
+    "correctAnswer": "C",
+    "explanation": "Fetch API is promise-based, and errors are commonly handled using `.catch()` to catch rejected promises."
+  },
+  {
+    "question": "Which of the following best describes Angular’s `ngOnInit` lifecycle hook?",
+    "options": {
+      "A": "Called before component is defined",
+      "B": "Triggers after all services are destroyed",
+      "C": "Initializes component logic, like fetching data",
+      "D": "Only works with jQuery"
+    },
+    "correctAnswer": "C",
+    "explanation": "`ngOnInit()` is called after component initialization and is ideal for initializing data like fetching from APIs."
+  },
+  {
+    "question": "In React, which hook is typically used to fetch data after component render?",
+    "options": {
+      "A": "useFetch",
+      "B": "useState",
+      "C": "useEffect",
+      "D": "useAPI"
+    },
+    "correctAnswer": "C",
+    "explanation": "The `useEffect` hook allows you to perform side effects such as data fetching in functional React components."
+  },
+  {
+    "question": "Which of the following is a disadvantage of jQuery’s ajax approach?",
+    "options": {
+      "A": "Easy JSON handling",
+      "B": "Great cross-domain support",
+      "C": "Cumbersome syntax and poor JSON handling",
+      "D": "Promise-based syntax"
+    },
+    "correctAnswer": "C",
+    "explanation": "jQuery’s ajax is less efficient for modern JSON workflows and lacks the simplicity of promise-based syntax."
+  },
+  {
+    "question": "Which file typically contains the logic to display user cards in a static HTML + JS project?",
+    "options": {
+      "A": "style.css",
+      "B": "App.js",
+      "C": "script.js",
+      "D": "index.ts"
+    },
+    "correctAnswer": "C",
+    "explanation": "In the given static HTML + Fetch API example, the logic for fetching and rendering users is placed in `script.js`."
+  },
+  {
+    "question": "Why might developers prefer using Fetch API over jQuery’s ajax method in modern projects?",
+    "options": {
+      "A": "Fetch requires jQuery as a dependency",
+      "B": "Fetch is built into modern browsers and offers cleaner promise-based syntax",
+      "C": "Ajax supports better debugging tools",
+      "D": "Fetch API only works with XML"
+    },
+    "correctAnswer": "B",
+    "explanation": "The Fetch API is built-in, uses promises, and is more concise, making it ideal for modern development."
+  },
+  {
+    "question": "What is the main challenge of managing state in web applications compared to desktop applications?",
+    "options": {
+      "A": "Web applications cannot access memory",
+      "B": "Web applications store state in the database by default",
+      "C": "Each HTTP request is stateless, losing all prior user information",
+      "D": "Web applications only support a single user at a time"
+    },
+    "correctAnswer": "C",
+    "explanation": "HTTP is a stateless protocol, so the server forgets user-specific data after each request."
+  },
+  {
+    "question": "Which of the following stores data in the HTML of the page and is posted back to the server with every request?",
+    "options": {
+      "A": "Session State",
+      "B": "ViewState",
+      "C": "Cookies",
+      "D": "Query String"
+    },
+    "correctAnswer": "B",
+    "explanation": "ViewState keeps data within the page and sends it back to the server during postbacks."
+  },
+  {
+    "question": "Which state management technique stores data directly on the client in the browser's URL?",
+    "options": {
+      "A": "Cookies",
+      "B": "ViewState",
+      "C": "Query String",
+      "D": "Session State"
+    },
+    "correctAnswer": "C",
+    "explanation": "Query strings append data to the URL, making them visible and easy to modify by users."
+  },
+  {
+    "question": "Why should large amounts of data not be stored in ViewState?",
+    "options": {
+      "A": "It requires database access",
+      "B": "It consumes server memory",
+      "C": "It increases HTML page size and slows down loading",
+      "D": "It is automatically encrypted and unreadable"
+    },
+    "correctAnswer": "C",
+    "explanation": "Large ViewState content bloats the page, leading to longer loading times and data transfers."
+  },
+  {
+    "question": "Which method is used in ASP.NET to store user-specific data across different pages during a session?",
+    "options": {
+      "A": "Application State",
+      "B": "Cookies",
+      "C": "Session State",
+      "D": "Query String"
+    },
+    "correctAnswer": "C",
+    "explanation": "Session State allows server-side storage of user data, maintained through a unique session ID."
+  },
+  {
+    "question": "What is the correct way to retrieve a value from ViewState in ASP.NET?",
+    "options": {
+      "A": "ViewState.get(\"counter\")",
+      "B": "ViewState[\"counter\"]",
+      "C": "Session[\"counter\"]",
+      "D": "Request.QueryString[\"counter\"]"
+    },
+    "correctAnswer": "B",
+    "explanation": "Values in ViewState are accessed using an indexer like ViewState[\"key\"] and cast to appropriate type."
+  },
+  {
+    "question": "Which of the following statements about cookies is TRUE?",
+    "options": {
+      "A": "Cookies are stored only in server memory",
+      "B": "Cookies cannot have expiration dates",
+      "C": "Cookies can be disabled by users",
+      "D": "Cookies can store complex object data"
+    },
+    "correctAnswer": "C",
+    "explanation": "Cookies are client-side and can be disabled or deleted by the user at any time."
+  },
+  {
+    "question": "How do you remove a cookie in ASP.NET?",
+    "options": {
+      "A": "Call Cookies.Remove(\"name\")",
+      "B": "Set the cookie value to null",
+      "C": "Assign an expired date to the cookie",
+      "D": "Use DeleteCookie() method"
+    },
+    "correctAnswer": "C",
+    "explanation": "A cookie is removed by setting an expiration date in the past, effectively deleting it from the browser."
+  },
+  {
+    "question": "Which of the following state management options is NOT visible to the client?",
+    "options": {
+      "A": "ViewState",
+      "B": "Session State",
+      "C": "Query String",
+      "D": "Cookies"
+    },
+    "correctAnswer": "B",
+    "explanation": "Session state is maintained on the server and not transmitted to or visible by the client."
+  },
+  {
+    "question": "Which method stores state data within a hidden field in the page itself?",
+    "options": {
+      "A": "Session State",
+      "B": "ViewState",
+      "C": "Cookie",
+      "D": "Query String"
+    },
+    "correctAnswer": "B",
+    "explanation": "ViewState stores data in a hidden field encoded into the page."
+  },
+  {
+    "question": "Which ASP.NET object is used to add a cookie to the client response?",
+    "options": {
+      "A": "Request.Cookies",
+      "B": "HttpContext.Items",
+      "C": "Response.Cookies",
+      "D": "Server.Cookies"
+    },
+    "correctAnswer": "C",
+    "explanation": "Response.Cookies is used to send cookies from server to client."
+  },
+  {
+    "question": "In the context of Session State, what happens when the session times out?",
+    "options": {
+      "A": "The server reuses the same session for other users",
+      "B": "The session data is permanently stored in cookies",
+      "C": "All session data is lost",
+      "D": "The session is cached in the database"
+    },
+    "correctAnswer": "C",
+    "explanation": "Session state is stored in memory and lost upon timeout or abandonment."
+  },
+  {
+    "question": "What is the primary advantage of using query strings?",
+    "options": {
+      "A": "They are secure and encrypted",
+      "B": "They support complex data types",
+      "C": "They require no server memory",
+      "D": "They are hidden from the user"
+    },
+    "correctAnswer": "C",
+    "explanation": "Query strings are passed in the URL and impose no burden on server memory."
+  },
+  {
+    "question": "Which event should be used to restore member variables using ViewState in ASP.NET?",
+    "options": {
+      "A": "Page_Init",
+      "B": "Page_Load",
+      "C": "Page_PreRender",
+      "D": "Page_Unload"
+    },
+    "correctAnswer": "B",
+    "explanation": "ViewState should be restored during Page_Load if IsPostBack is true."
+  },
+  {
+    "question": "Which method in ASP.NET can end a user session programmatically?",
+    "options": {
+      "A": "Session.Close()",
+      "B": "Session.End()",
+      "C": "Session.Dispose()",
+      "D": "Session.Abandon()"
+    },
+    "correctAnswer": "D",
+    "explanation": "Session.Abandon() is used to explicitly terminate a session in ASP.NET."
+  },
+  {
+    "question": "What is the main challenge with state in web applications?",
+    "options": {
+      "A": "Web servers always retain all client data by default",
+      "B": "Only one user can access a web application at a time",
+      "C": "The server forgets the client after each request-response cycle",
+      "D": "Web applications cannot store data at all"
+    },
+    "correctAnswer": "C",
+    "explanation": "After serving a page, the server forgets the client because the connection is closed."
+  },
+  {
+    "question": "Which state management method stores data in the client’s browser URL?",
+    "options": {
+      "A": "Session State",
+      "B": "Cookies",
+      "C": "Query String",
+      "D": "ViewState"
+    },
+    "correctAnswer": "C",
+    "explanation": "Query strings pass data via the URL and are visible to the user."
+  },
+  {
+    "question": "Which of the following can persist across multiple user visits?",
+    "options": {
+      "A": "ViewState",
+      "B": "Session State",
+      "C": "Cookies",
+      "D": "Query Strings"
+    },
+    "correctAnswer": "C",
+    "explanation": "Cookies can be configured with expiration dates and survive across sessions."
+  },
+  {
+    "question": "Which method stores user data in the HTML page itself?",
+    "options": {
+      "A": "Cookies",
+      "B": "Session State",
+      "C": "ViewState",
+      "D": "Query String"
+    },
+    "correctAnswer": "C",
+    "explanation": "ViewState stores data in a hidden field in the page returned to the browser."
+  },
+  {
+    "question": "Which ViewState property must be set to true for controls to retain state?",
+    "options": {
+      "A": "KeepAlive",
+      "B": "EnablePersistence",
+      "C": "EnableViewState",
+      "D": "AutoState"
+    },
+    "correctAnswer": "C",
+    "explanation": "EnableViewState is the property that determines if a control retains state between postbacks."
+  },
+  {
+    "question": "What is a key disadvantage of ViewState?",
+    "options": {
+      "A": "It is stored on the server",
+      "B": "It is encrypted and unreadable",
+      "C": "It increases page size and load time",
+      "D": "It works only with ASP.NET MVC"
+    },
+    "correctAnswer": "C",
+    "explanation": "Large ViewState data bloats the HTML page and slows down performance."
+  },
+  {
+    "question": "Which state management technique uses a hidden field to store information?",
+    "options": {
+      "A": "Session",
+      "B": "Cookies",
+      "C": "Query String",
+      "D": "ViewState"
+    },
+    "correctAnswer": "D",
+    "explanation": "ViewState uses a hidden field in the page to retain control values across postbacks."
+  },
+  {
+    "question": "Which is NOT a disadvantage of query strings?",
+    "options": {
+      "A": "Information is visible in the URL",
+      "B": "Information is limited in length",
+      "C": "It stores sensitive binary objects",
+      "D": "The user may manually modify the URL"
+    },
+    "correctAnswer": "C",
+    "explanation": "Query strings can only store simple strings, not complex binary objects."
+  },
+  {
+    "question": "How can you remove a cookie in ASP.NET?",
+    "options": {
+      "A": "Call cookie.Delete() method",
+      "B": "Set its value to null",
+      "C": "Set an expiration date in the past",
+      "D": "Use Request.Cookies.Clear()"
+    },
+    "correctAnswer": "C",
+    "explanation": "Cookies are removed by setting their expiration date to a past time."
+  },
+  {
+    "question": "Which object is used to retrieve cookies in ASP.NET?",
+    "options": {
+      "A": "Response.Cookies",
+      "B": "HttpContext.Cookies",
+      "C": "Request.Cookies",
+      "D": "Server.Cookies"
+    },
+    "correctAnswer": "C",
+    "explanation": "Request.Cookies is used to access cookies sent by the client."
+  },
+  {
+    "question": "Session state stores data where?",
+    "options": {
+      "A": "On the client-side using local storage",
+      "B": "On the server’s memory",
+      "C": "Inside the HTML page",
+      "D": "In the browser cache"
+    },
+    "correctAnswer": "B",
+    "explanation": "Session state is server-side and stores data in memory allocated to each session."
+  },
+  {
+    "question": "Which method ends a session manually in ASP.NET?",
+    "options": {
+      "A": "Session.End()",
+      "B": "Session.Dispose()",
+      "C": "Session.Clear()",
+      "D": "Session.Abandon()"
+    },
+    "correctAnswer": "D",
+    "explanation": "Session.Abandon() terminates the current session and clears all associated data."
+  },
+  {
+    "question": "Which of the following can store complex data like objects?",
+    "options": {
+      "A": "Query String",
+      "B": "Cookies",
+      "C": "Session State",
+      "D": "ViewState"
+    },
+    "correctAnswer": "C",
+    "explanation": "Session state can hold complex data types because it's stored on the server."
+  },
+  {
+    "question": "Why is null checking important when using session or cookies?",
+    "options": {
+      "A": "They are always null",
+      "B": "They may not exist if disabled or expired",
+      "C": "It prevents data duplication",
+      "D": "They must be initialized by default"
+    },
+    "correctAnswer": "B",
+    "explanation": "Session or cookie data may be missing due to user actions or browser settings."
+  },
+  {
+    "question": "Which ASP.NET object is used to set a session variable?",
+    "options": {
+      "A": "HttpContext.Session.SetString()",
+      "B": "ViewState[\"value\"] = \"data\";",
+      "C": "Request.QueryString.Add()",
+      "D": "Response.Cookies.Set()"
+    },
+    "correctAnswer": "A",
+    "explanation": "Session data is set using the HttpContext.Session.SetString() method in ASP.NET Core."
+  },
+  {
+    "question": "Which file extension is used for ASP.NET user controls?",
+    "options": {
+      "A": ".aspx",
+      "B": ".ascx",
+      "C": ".asmx",
+      "D": ".cs"
+    },
+    "correctAnswer": "B",
+    "explanation": "ASP.NET user control files use the .ascx extension."
+  },
+  {
+    "question": "What is the purpose of the <%@ Register %> directive in ASP.NET?",
+    "options": {
+      "A": "To register a new database",
+      "B": "To add a stylesheet",
+      "C": "To use a user control in a web page",
+      "D": "To start the server"
+    },
+    "correctAnswer": "C",
+    "explanation": "The Register directive allows a user control to be used in a web page."
+  },
+  {
+    "question": "Which type of user control does NOT interact with the hosting page?",
+    "options": {
+      "A": "Embedded",
+      "B": "Static",
+      "C": "Independent",
+      "D": "Integrated"
+    },
+    "correctAnswer": "C",
+    "explanation": "Independent user controls are designed to be self-contained and not interact with the host page."
+  },
+  {
+    "question": "What is the main benefit of using Master Pages in ASP.NET?",
+    "options": {
+      "A": "They improve database access speed",
+      "B": "They enforce server security",
+      "C": "They provide consistent layout across web pages",
+      "D": "They store user credentials"
+    },
+    "correctAnswer": "C",
+    "explanation": "Master Pages allow for consistent layout and structure throughout a website."
+  },
+  {
+    "question": "Where should ASP.NET theme files be stored?",
+    "options": {
+      "A": "/Themes",
+      "B": "/Assets",
+      "C": "/App_Themes",
+      "D": "/Styles"
+    },
+    "correctAnswer": "C",
+    "explanation": "ASP.NET expects themes to be located in the App_Themes folder."
+  },
+  {
+    "question": "Which control is used to display tabular data with automatic paging in ASP.NET?",
+    "options": {
+      "A": "FormView",
+      "B": "GridView",
+      "C": "ListView",
+      "D": "Repeater"
+    },
+    "correctAnswer": "B",
+    "explanation": "GridView supports tabular data display with built-in paging and sorting."
+  },
+  {
+    "question": "Which method of the Command object should be used to retrieve data from a database?",
+    "options": {
+      "A": "ExecuteNonQuery()",
+      "B": "ExecuteReader()",
+      "C": "ExecuteScalar()",
+      "D": "ExecuteUpdate()"
+    },
+    "correctAnswer": "B",
+    "explanation": "ExecuteReader() is used to retrieve records from a database."
+  },
+  {
+    "question": "What does ExecuteNonQuery() return?",
+    "options": {
+      "A": "A DataReader",
+      "B": "The first value of the first row",
+      "C": "The number of rows affected",
+      "D": "A boolean value"
+    },
+    "correctAnswer": "C",
+    "explanation": "ExecuteNonQuery returns the number of rows affected by the command."
+  },
+  {
+    "question": "Which class is used to connect to an Access database in ADO.NET?",
+    "options": {
+      "A": "SqlConnection",
+      "B": "OracleConnection",
+      "C": "OleDbConnection",
+      "D": "OdbcConnection"
+    },
+    "correctAnswer": "C",
+    "explanation": "OleDbConnection is used to connect to Access databases."
+  },
+  {
+    "question": "What type of data binding allows insertion of a single value into a page?",
+    "options": {
+      "A": "List binding",
+      "B": "Double-value binding",
+      "C": "Single-value binding",
+      "D": "Dataset binding"
+    },
+    "correctAnswer": "C",
+    "explanation": "Single-value binding inserts a variable or expression into the page."
+  },
+  {
+    "question": "Which GridView column type displays text directly from a data field?",
+    "options": {
+      "A": "TemplateField",
+      "B": "BoundField",
+      "C": "CommandField",
+      "D": "ImageField"
+    },
+    "correctAnswer": "B",
+    "explanation": "BoundField displays a text value directly from a data source field."
+  },
+  {
+    "question": "Which ADO.NET method is best for reading a large number of rows quickly?",
+    "options": {
+      "A": "DataAdapter",
+      "B": "DataSet",
+      "C": "DataReader",
+      "D": "DataTable"
+    },
+    "correctAnswer": "C",
+    "explanation": "DataReader is fast and efficient for forward-only, read-only access to data."
+  },
+  {
+    "question": "What does the Read() method of a DataReader return?",
+    "options": {
+      "A": "Number of rows",
+      "B": "True if there are more rows",
+      "C": "The next row object",
+      "D": "Column headers"
+    },
+    "correctAnswer": "B",
+    "explanation": "Read() returns true if it successfully reads the next row."
+  },
+  {
+    "question": "What is required to activate data binding on a control?",
+    "options": {
+      "A": "BindNow() method",
+      "B": "Refresh() method",
+      "C": "DataBind() method",
+      "D": "EnableBinding() method"
+    },
+    "correctAnswer": "C",
+    "explanation": "You must call the DataBind() method to apply data binding to a control."
+  },
+  {
+    "question": "Which of the following is NOT a method of executing SQL commands using Command object?",
+    "options": {
+      "A": "ExecuteScalar()",
+      "B": "ExecuteReader()",
+      "C": "ExecuteNonQuery()",
+      "D": "ExecuteDataSet()"
+    },
+    "correctAnswer": "D",
+    "explanation": "ExecuteDataSet() is not a method of the Command object in ADO.NET."
+  },
+  {
+    "question": "Which HTML form attribute is required to enable file uploads in ASP.NET Web Forms?",
+    "options": {
+      "A": "method=\"post\"",
+      "B": "enctype=\"text/plain\"",
+      "C": "enctype=\"multipart/form-data\"",
+      "D": "action=\"upload.aspx\""
+    },
+    "correctAnswer": "C",
+    "explanation": "ASP.NET Web Forms requires enctype=\"multipart/form-data\" to handle file uploads."
+  },
+  {
+    "question": "Which ASP.NET control is used to upload files?",
+    "options": {
+      "A": "asp:UploadControl",
+      "B": "asp:FileHandler",
+      "C": "asp:FileUpload",
+      "D": "asp:File"
+    },
+    "correctAnswer": "C",
+    "explanation": "The asp:FileUpload control is specifically designed to handle file uploads in Web Forms."
+  },
+  {
+    "question": "What method is used to save the uploaded file to the server?",
+    "options": {
+      "A": "FileUpload.Upload()",
+      "B": "SaveFile()",
+      "C": "SaveAs()",
+      "D": "UploadTo()"
+    },
+    "correctAnswer": "C",
+    "explanation": "The SaveAs() method is used to store the uploaded file to a specific server path."
+  },
+  {
+    "question": "What should be done if the upload directory does not exist?",
+    "options": {
+      "A": "Use File.Create()",
+      "B": "Ignore it",
+      "C": "Use Directory.CreateDirectory()",
+      "D": "Create the directory manually on the server"
+    },
+    "correctAnswer": "C",
+    "explanation": "Directory.CreateDirectory() is used in code to ensure the upload directory exists."
+  },
+  {
+    "question": "How do you restrict file uploads to only .jpg and .png formats?",
+    "options": {
+      "A": "Check the MIME type only",
+      "B": "Check the file size only",
+      "C": "Validate the file extension using Path.GetExtension()",
+      "D": "Rely on client-side JavaScript"
+    },
+    "correctAnswer": "C",
+    "explanation": "The file extension is extracted using Path.GetExtension() and validated against allowed formats."
+  },
+  {
+    "question": "Which Web.config setting controls the maximum allowed file size?",
+    "options": {
+      "A": "<sessionState timeout=\"30\" />",
+      "B": "<httpRuntime maxRequestLength=\"4096\" />",
+      "C": "<requestLimit size=\"4096\" />",
+      "D": "<uploadLimit value=\"4MB\" />"
+    },
+    "correctAnswer": "B",
+    "explanation": "The maxRequestLength property in the <httpRuntime> section sets the file upload size limit."
+  },
+  {
+    "question": "Which namespace is used to extract image metadata like width and height?",
+    "options": {
+      "A": "System.Media",
+      "B": "System.Web.Imaging",
+      "C": "System.Drawing",
+      "D": "System.Graphics"
+    },
+    "correctAnswer": "C",
+    "explanation": "System.Drawing.Image provides properties like Width and Height for image files."
+  },
+  {
+    "question": "How can you prevent path traversal attacks in uploaded filenames?",
+    "options": {
+      "A": "Check for '..' or root paths",
+      "B": "Use URL encoding",
+      "C": "Remove file extensions",
+      "D": "Use cookies"
+    },
+    "correctAnswer": "A",
+    "explanation": "Checking for '..' and rooted paths ensures the file path is safe and doesn't traverse directories."
+  },
+  {
+    "question": "What is the purpose of using a GUID in the uploaded file name?",
+    "options": {
+      "A": "To compress the file",
+      "B": "To ensure uniqueness",
+      "C": "To track upload speed",
+      "D": "To limit file size"
+    },
+    "correctAnswer": "B",
+    "explanation": "A GUID appended to the file name helps avoid name conflicts and ensures each upload is unique."
+  },
+  {
+    "question": "What tool is commonly integrated to scan uploaded files for viruses?",
+    "options": {
+      "A": "WinZip",
+      "B": "ImageMagick",
+      "C": "ClamAV",
+      "D": "FFmpeg"
+    },
+    "correctAnswer": "C",
+    "explanation": "ClamAV is a widely used open-source antivirus scanner used for file upload security."
+  },
+  {
+    "question": "Which location should uploaded files be saved to before scanning?",
+    "options": {
+      "A": "~/Uploads/",
+      "B": "Client machine",
+      "C": "~/TempUploads/",
+      "D": "~/Documents/"
+    },
+    "correctAnswer": "C",
+    "explanation": "Files should be saved to a temporary directory like ~/TempUploads/ before virus scanning."
+  },
+  {
+    "question": "What type of user is denied access in the web.config upload directory configuration?",
+    "options": {
+      "A": "All authenticated users",
+      "B": "All administrators",
+      "C": "Anonymous users",
+      "D": "Everyone"
+    },
+    "correctAnswer": "C",
+    "explanation": "The configuration explicitly denies access to anonymous users using <deny users=\"?\" />."
+  },
+  {
+    "question": "What information is NOT typically logged during a file upload?",
+    "options": {
+      "A": "Username or IP",
+      "B": "Upload success rate",
+      "C": "File name and size",
+      "D": "Timestamp"
+    },
+    "correctAnswer": "B",
+    "explanation": "Upload success rate is not a typical log entry; logs usually capture metadata like user, name, and size."
+  },
+  {
+    "question": "Which storage method provides faster performance for uploaded files?",
+    "options": {
+      "A": "Saving as text in a database",
+      "B": "Storing in BLOB fields",
+      "C": "Storing in the filesystem with file paths",
+      "D": "Storing in XML format"
+    },
+    "correctAnswer": "C",
+    "explanation": "Files stored in the filesystem and referenced by path offer better performance compared to BLOBs."
+  },
+  {
+    "question": "Which class is used to append upload logs to a text file?",
+    "options": {
+      "A": "FileWriter",
+      "B": "StreamWriter",
+      "C": "File",
+      "D": "TextAppender"
+    },
+    "correctAnswer": "C",
+    "explanation": "The static method File.AppendAllText() is used to write logs to a text file."
+  },
+  {
+    "question": "Which logging level in ASP.NET Core is used to log the most detailed debugging information?",
+    "options": {
+      "A": "LogWarning",
+      "B": "LogInformation",
+      "C": "LogTrace",
+      "D": "LogCritical"
+    },
+    "correctAnswer": "C",
+    "explanation": "LogTrace is the most detailed log level used mainly for diagnosing problems during development."
+  },
+  {
+    "question": "What is the purpose of Dependency Injection (DI) in ASP.NET Core logging?",
+    "options": {
+      "A": "To increase file logging performance",
+      "B": "To automatically store logs in a database",
+      "C": "To allow logging from anywhere in the application",
+      "D": "To define log message templates"
+    },
+    "correctAnswer": "C",
+    "explanation": "DI allows services like logging to be injected into classes, enabling logging across the application."
+  },
+  {
+    "question": "Which built-in logging provider writes logs to the Visual Studio Output window?",
+    "options": {
+      "A": "Console",
+      "B": "EventLog",
+      "C": "Debug",
+      "D": "EventSource"
+    },
+    "correctAnswer": "C",
+    "explanation": "The Debug provider logs messages to the Visual Studio Output window, useful during development."
+  },
+  {
+    "question": "Which log level is typically used to indicate a recoverable application failure?",
+    "options": {
+      "A": "LogInformation",
+      "B": "LogWarning",
+      "C": "LogError",
+      "D": "LogDebug"
+    },
+    "correctAnswer": "C",
+    "explanation": "LogError is used for application failures that may still be recoverable."
+  },
+  {
+    "question": "What is the purpose of the 'finally' block in exception handling?",
+    "options": {
+      "A": "To catch all exceptions",
+      "B": "To handle critical errors only",
+      "C": "To execute code regardless of an exception",
+      "D": "To re-throw exceptions"
+    },
+    "correctAnswer": "C",
+    "explanation": "The 'finally' block ensures that code runs whether or not an exception occurred."
+  },
+  {
+    "question": "Which statement about custom exceptions in C# is correct?",
+    "options": {
+      "A": "They cannot inherit from System.Exception",
+      "B": "They should not have constructors",
+      "C": "They help specify application-specific errors",
+      "D": "They must be logged manually"
+    },
+    "correctAnswer": "C",
+    "explanation": "Custom exceptions clarify the type of error and make the code more readable."
+  },
+  {
+    "question": "Which of the following is a benefit of logging in web applications?",
+    "options": {
+      "A": "Slows down request processing",
+      "B": "Reduces exception visibility",
+      "C": "Provides performance and error diagnostics",
+      "D": "Hides user behavior details"
+    },
+    "correctAnswer": "C",
+    "explanation": "Logging helps monitor performance issues, track errors, and understand user actions."
+  },
+  {
+    "question": "How is structured logging achieved in Serilog?",
+    "options": {
+      "A": "Using simple string messages",
+      "B": "Using key-value pairs in log messages",
+      "C": "By writing logs only to files",
+      "D": "Using XML configuration"
+    },
+    "correctAnswer": "B",
+    "explanation": "Serilog enables structured logging using key-value pairs, allowing for better querying and analysis."
+  },
+  {
+    "question": "What is a 'sink' in Serilog?",
+    "options": {
+      "A": "A log filter",
+      "B": "A destination for log messages",
+      "C": "An exception handler",
+      "D": "A log level manager"
+    },
+    "correctAnswer": "B",
+    "explanation": "Sinks are plugins that determine where logs are written, such as files or databases."
+  },
+  {
+    "question": "Which NLog component allows detailed customization of log formats?",
+    "options": {
+      "A": "Renderers",
+      "B": "Sinks",
+      "C": "Controllers",
+      "D": "Levels"
+    },
+    "correctAnswer": "A",
+    "explanation": "Layout Renderers in NLog let you customize log messages with specific formats like timestamp and class names."
+  },
+  {
+    "question": "Which command adds the Serilog console sink to a .NET Core project?",
+    "options": {
+      "A": "dotnet add package Serilog.Extensions.Logging",
+      "B": "dotnet add package Serilog.Sinks.Console",
+      "C": "dotnet add Serilog.Console",
+      "D": "dotnet add Serilog.Logging"
+    },
+    "correctAnswer": "B",
+    "explanation": "Serilog.Sinks.Console is the correct package for enabling console output in Serilog."
+  },
+  {
+    "question": "What is the purpose of 'app.UseExceptionHandler' in ASP.NET Core?",
+    "options": {
+      "A": "To log all critical events to the database",
+      "B": "To globally handle unhandled exceptions",
+      "C": "To increase request performance",
+      "D": "To filter debug-level logs"
+    },
+    "correctAnswer": "B",
+    "explanation": "app.UseExceptionHandler sets up a middleware to catch unhandled exceptions and redirect to an error page."
+  },
+  {
+    "question": "Which of the following statements about exception handling is TRUE?",
+    "options": {
+      "A": "All exceptions should be caught by the most generic handler first",
+      "B": "Only custom exceptions should be used",
+      "C": "Specific exception types should be caught before the generic 'Exception'",
+      "D": "Try blocks must be followed by a finally block"
+    },
+    "correctAnswer": "C",
+    "explanation": "Specific exception types should be caught first to allow more precise error handling."
+  },
+  {
+    "question": "Which logging output format does Serilog use by default when structured logging is enabled?",
+    "options": {
+      "A": "XML",
+      "B": "Plain Text",
+      "C": "JSON",
+      "D": "YAML"
+    },
+    "correctAnswer": "C",
+    "explanation": "Serilog typically outputs structured log data in JSON format."
+  },
+  {
+    "question": "Which configuration file is primarily used to set up NLog?",
+    "options": {
+      "A": "serilog.json",
+      "B": "nlog.config",
+      "C": "logsettings.xml",
+      "D": "appsettings.json"
+    },
+    "correctAnswer": "B",
+    "explanation": "NLog is usually configured through an external XML file named nlog.config."
+  }
+]
+
+
+
+
+
+
+
