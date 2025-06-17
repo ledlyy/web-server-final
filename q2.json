@@ -1,0 +1,1211 @@
+[
+  {
+    "question": "What does API consumption refer to?",
+    "options": {
+      "A": "Writing CSS for APIs",
+      "B": "Connecting frontend apps directly to databases",
+      "C": "Sending or receiving data via APIs",
+      "D": "Using XML files in HTML"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which HTTP method is used to retrieve data?",
+    "options": {
+      "A": "PUT",
+      "B": "DELETE",
+      "C": "POST",
+      "D": "GET"
+    },
+    "correctAnswer": "D",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which method is used in vanilla JS to send HTTP requests?",
+    "options": {
+      "A": "$.ajax",
+      "B": "XMLHttpRequest",
+      "C": "JSON.parse",
+      "D": "fetchData()"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What does AJAX stand for?",
+    "options": {
+      "A": "Asynchronous JavaScript and XML",
+      "B": "Advanced JSON and XML",
+      "C": "Active Java and XAML",
+      "D": "Asynchronous Java and XQuery"
+    },
+    "correctAnswer": "A",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which of the following is NOT a disadvantage of jQueryâs Ajax?",
+    "options": {
+      "A": "Handling JSON easily",
+      "B": "Cross-domain issues",
+      "C": "Complex structure",
+      "D": "No built-in progress tracking"
+    },
+    "correctAnswer": "A",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which feature is central to Fetch API?",
+    "options": {
+      "A": "jQuery",
+      "B": "Classes",
+      "C": "Promises",
+      "D": "Synchronous calls"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What does .then() handle in a Fetch call?",
+    "options": {
+      "A": "Looping data",
+      "B": "Delaying execution",
+      "C": "Handling promise resolution",
+      "D": "CSS styling"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which of these is NOT an advantage of Fetch API?",
+    "options": {
+      "A": "Built-in browser support",
+      "B": "Requires external libraries",
+      "C": "Promise-based",
+      "D": "Easy JSON handling"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which is a disadvantage of Fetch API?",
+    "options": {
+      "A": "JSON incompatibility",
+      "B": "No canceling support",
+      "C": "Slow speed",
+      "D": "Built-in jQuery support"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "In terms of DOM manipulation, React uses:",
+    "options": {
+      "A": "Real DOM",
+      "B": "Virtual DOM",
+      "C": "Shadow DOM",
+      "D": "CSS DOM"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Angular uses which data binding method?",
+    "options": {
+      "A": "One-way",
+      "B": "No binding",
+      "C": "Two-way",
+      "D": "Event binding only"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which frontend framework uses one-way data binding?",
+    "options": {
+      "A": "Angular",
+      "B": "React",
+      "C": "Vue.js",
+      "D": "Bootstrap"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What happens when model and view stay synchronized automatically?",
+    "options": {
+      "A": "One-way binding",
+      "B": "No data flow",
+      "C": "Two-way data binding",
+      "D": "Manual DOM update"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which API does NOT require external libraries?",
+    "options": {
+      "A": "jQuery AJAX",
+      "B": "Fetch API",
+      "C": "Axios",
+      "D": "XMLParser"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "In Fetch API, what does .catch() handle?",
+    "options": {
+      "A": "UI updates",
+      "B": "Syntax errors",
+      "C": "Data parsing",
+      "D": "Errors in request"
+    },
+    "correctAnswer": "D",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What does API stand for?",
+    "options": {
+      "A": "Advanced Programming Interface",
+      "B": "Application Programming Interface",
+      "C": "Automated Protocol Integration",
+      "D": "Application Port Input"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which Angular service method retrieves posts in the example?",
+    "options": {
+      "A": "getUsers()",
+      "B": "getPosts()",
+      "C": "postService()",
+      "D": "getData()"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What type of DOM is used in Angular?",
+    "options": {
+      "A": "Virtual",
+      "B": "Manual",
+      "C": "Real",
+      "D": "Render DOM"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which of the following best describes Reactâs performance?",
+    "options": {
+      "A": "Lower than Angular",
+      "B": "Better bundle size and compatibility",
+      "C": "Uses jQuery",
+      "D": "Slower rendering"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What is a useEffect() hook used for in React?",
+    "options": {
+      "B": "Fetching data",
+      "C": "Installing packages",
+      "D": "Creating services"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which of the following is true about ViewState?",
+    "options": {
+      "A": "It stores data on the server",
+      "B": "It is visible in the URL",
+      "C": "It stores data in the page itself",
+      "D": "It is shared across all users"
+    },
+    "correctAnswer": "C",
+    "explanation": "ViewState veriyi sayfa iÃ§erisinde saklar (genellikle gizli bir HTML alanÄ±nda). Sunucuda tutulmaz, kullanÄ±cÄ±ya Ã¶zeldir."
+  },
+  {
+    "question": "What is a major disadvantage of ViewState?",
+    "options": {
+      "A": "Requires external database",
+      "B": "Increases HTML page size",
+      "C": "Works only in Firefox",
+      "D": "Cannot store numbers"
+    },
+    "correctAnswer": "B",
+    "explanation": "ViewState, veri sayfa iÃ§ine gÃ¶mÃ¼ldÃ¼ÄÃ¼ iÃ§in sayfa boyutunu bÃ¼yÃ¼tÃ¼r ve bu da yavaÅ yÃ¼klenmeye neden olabilir."
+  },
+  {
+    "question": "In ASP.NET, ViewState stores data using:",
+    "options": {
+      "A": "Keyâvalue pairs",
+      "B": "Arrays",
+      "C": "Sessions",
+      "D": "JSON objects"
+    },
+    "correctAnswer": "A",
+    "explanation": "ViewState, string anahtarlar kullanarak veri saklayan bir StateBag koleksiyonudur."
+  },
+  {
+    "question": "What happens to member variables in an ASP.NET page between postbacks?",
+    "options": {
+      "A": "They are preserved in memory",
+      "B": "They are reset unless stored in ViewState",
+      "C": "They are converted to cookies",
+      "D": "They are transferred to client"
+    },
+    "correctAnswer": "B",
+    "explanation": "ASP.NET'te member deÄiÅkenleri postback sonrasÄ±nda kaybolur. ViewState ile korunmalarÄ± gerekir."
+  },
+  {
+    "question": "Which of the following is a security concern with Query Strings?",
+    "options": {
+      "A": "They are encrypted by default",
+      "B": "They are stored in server memory",
+      "C": "They are visible in the URL",
+      "D": "They work only on GET requests"
+    },
+    "correctAnswer": "C",
+    "explanation": "Query stringâler aÃ§Ä±kÃ§a URLâde gÃ¶rÃ¼nÃ¼r; hassas bilgi taÅÄ±maya uygun deÄildir."
+  },
+  {
+    "question": "Which method is used to retrieve a query string parameter in ASP.NET?",
+    "options": {
+      "A": "Session[âparamâ]",
+      "B": "ViewState[âparamâ]",
+      "C": "Request.QueryString[âparamâ]",
+      "D": "Cookies[âparamâ]"
+    },
+    "correctAnswer": "C",
+    "explanation": "Query string verisini almak iÃ§in Request.QueryString[\"key\"] kullanÄ±lÄ±r."
+  },
+  {
+    "question": "What is the limitation of using query strings?",
+    "options": {
+      "A": "Cannot use with HTTPS",
+      "B": "Cannot use with Chrome",
+      "C": "URL length is limited",
+      "D": "Requires database"
+    },
+    "correctAnswer": "C",
+    "explanation": "URLâlerin karakter sÄ±nÄ±rÄ± vardÄ±r (Ã§oÄu tarayÄ±cÄ±da ~2000 karakter)."
+  },
+  {
+    "question": "Cookies are stored:",
+    "options": {
+      "A": "In RAM",
+      "B": "In database",
+      "C": "On the clientâs computer",
+      "D": "On the server"
+    },
+    "correctAnswer": "C",
+    "explanation": "Cookies, kullanÄ±cÄ±nÄ±n tarayÄ±cÄ±sÄ±nda saklanÄ±r ve siteye her geliÅinde gÃ¶nderilir."
+  },
+  {
+    "question": "Cookies can be deleted by:",
+    "options": {
+      "A": "ViewState.Clear()",
+      "B": "Removing from the server",
+      "C": "Setting an expiration date in the past",
+      "D": "Session.RemoveAll()"
+    },
+    "correctAnswer": "C",
+    "explanation": "Cookieâyi silmenin tek yolu, geÃ§miÅ bir tarihle yeniden tanÄ±mlamaktÄ±r."
+  },
+  {
+    "question": "Which is NOT a drawback of cookies?",
+    "options": {
+      "A": "They can be disabled by users",
+      "B": "They are limited to simple strings",
+      "C": "They are stored server-side",
+      "D": "They can be manually deleted"
+    },
+    "correctAnswer": "C",
+    "explanation": "Cookies sunucuda deÄil, istemcide tutulur. Bu yÃ¼zden C ÅÄ±kkÄ± yanlÄ±ÅtÄ±r."
+  },
+  {
+    "question": "What is an appropriate use case for cookies?",
+    "options": {
+      "A": "Storing password",
+      "B": "Storing language preference",
+      "C": "Storing userâs shopping cart",
+      "D": "Storing large datasets"
+    },
+    "correctAnswer": "B",
+    "explanation": "KÃ¼Ã§Ã¼k ve Ã¶nemsiz veriler (dil tercihi gibi) cookie ile saklanabilir. GÃ¼venli olmayan veriler saklanmamalÄ±dÄ±r."
+  },
+  {
+    "question": "How is session data identified by default?",
+    "options": {
+      "A": "IP address",
+      "B": "URL segment",
+      "C": "Cookie-based session ID",
+      "D": "MAC address"
+    },
+    "correctAnswer": "C",
+    "explanation": "ASP.NETâte sessionâlar varsayÄ±lan olarak bir cookie iÃ§inde yer alan session ID ile tanÄ±mlanÄ±r."
+  },
+  {
+    "question": "Which is an advantage of session state over cookies?",
+    "options": {
+      "A": "Stored in the client",
+      "B": "Not affected by timeouts",
+      "C": "Can store complex objects",
+      "D": "Shared across users"
+    },
+    "correctAnswer": "C",
+    "explanation": "Sessionâlar sunucuda saklanÄ±r ve karmaÅÄ±k veri tiplerini tutabilir (class, liste vs)."
+  },
+  {
+    "question": "When is session state data lost?",
+    "options": {
+      "A": "When user refreshes the page",
+      "B": "When user clears the ViewState",
+      "C": "When browser is closed",
+      "D": "When cookie is set"
+    },
+    "correctAnswer": "C",
+    "explanation": "TarayÄ±cÄ± kapanÄ±rsa veya session sÃ¼resi dolarsa session verisi silinir."
+  },
+  {
+    "question": "What does Session.Abandon() do?",
+    "options": {
+      "A": "Clears all cookies",
+      "B": "Destroys session data",
+      "C": "Resets the URL",
+      "D": "Clears the ViewState"
+    },
+    "correctAnswer": "B",
+    "explanation": "Session.Abandon() metodu, geÃ§erli oturumu sonlandÄ±rÄ±r ve tÃ¼m session verilerini siler."
+  },
+  {
+    "question": "Which of the following can retain data between user visits (long-term)?",
+    "options": {
+      "A": "Session State",
+      "B": "ViewState",
+      "C": "Query String",
+      "D": "Cookie"
+    },
+    "correctAnswer": "D",
+    "explanation": "Cookieâler belirli bir sÃ¼re (gÃ¼n, yÄ±l) boyunca kalÄ±cÄ± olarak saklanabilir."
+  },
+  {
+    "question": "Where is ViewState data stored?",
+    "options": {
+      "A": "Web server memory",
+      "B": "Database",
+      "C": "HTML hidden field",
+      "D": "Clientâs file system"
+    },
+    "correctAnswer": "C",
+    "explanation": "ViewState sayfanÄ±n HTML Ã§Ä±ktÄ±sÄ±na gÃ¶mÃ¼lÃ¼r (__VIEWSTATE adÄ±nda gizli bir alan)."
+  },
+  {
+    "question": "Why should you avoid putting large objects in ViewState?",
+    "options": {
+      "A": "They are not serialized",
+      "B": "They cause database errors",
+      "C": "They increase page load time",
+      "D": "They crash the session"
+    },
+    "correctAnswer": "C",
+    "explanation": "BÃ¼yÃ¼k veriler sayfa boyutunu artÄ±rÄ±r, bu da sayfanÄ±n yavaÅlamasÄ±na sebep olur."
+  },
+  {
+    "question": "Which method sets a value into Session state in ASP.NET Core?",
+    "options": {
+      "A": "ViewState[âuserâ] = âAliâ;",
+      "B": "Cookies.Set(âuserâ, âAliâ);",
+      "C": "HttpContext.Session.SetString(âuserâ, âAliâ)",
+      "D": "Request.QueryString[âuserâ] = âAliâ;"
+    },
+    "correctAnswer": "C",
+    "explanation": "ASP.NET Core'da sessionâa veri koymak iÃ§in HttpContext.Session.SetString() kullanÄ±lÄ±r."
+  },
+  {
+    "question": "Which of the following is stored on the server?",
+    "options": {
+      "A": "ViewState",
+      "B": "Query String",
+      "C": "Cookie",
+      "D": "Session State"
+    },
+    "correctAnswer": "D",
+    "explanation": "Sadece session state sunucuda tutulur. DiÄerleri istemci tarafÄ±nda saklanÄ±r."
+  },
+  {
+    "question": "What is the file extension for a user control in ASP.NET?",
+    "options": {
+      "A": ".aspx",
+      "B": ".master",
+      "C": ".ascx",
+      "D": ".html"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which directive starts a user control?",
+    "options": {
+      "A": "<%@ Page %>",
+      "B": "<%@ Control %>",
+      "C": "<%@ Register %>",
+      "D": "<%@ Master %>"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which of the following is true about user controls?",
+    "options": {
+      "A": "They can be opened directly in a browser",
+      "B": "They must be embedded in a web page",
+      "C": "They replace master pages",
+      "D": "They store session data"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What is the purpose of ContentPlaceHolder in a master page?",
+    "options": {
+      "A": "To store cookies",
+      "B": "To define a reusable layout",
+      "C": "To allow content pages to insert content",
+      "D": "To create a user session"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Where should themes be placed in an ASP.NET project?",
+    "options": {
+      "A": "/styles",
+      "B": "/skins",
+      "C": "/App_Themes",
+      "D": "/MasterPages"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What is the extension for a theme skin file?",
+    "options": {
+      "A": ".css",
+      "B": ".master",
+      "C": ".skin",
+      "D": ".ascx"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which style type is written directly inside an HTML tag?",
+    "options": {
+      "A": "External",
+      "B": "Inline",
+      "C": "Internal",
+      "D": "Embedded"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What does CSS NOT control in ASP.NET controls?",
+    "options": {
+      "A": "Font",
+      "B": "Color",
+      "C": "Layout of CheckBoxList",
+      "D": "Margin"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which control is best for showing tabular data?",
+    "options": {
+      "A": "TextBox",
+      "B": "GridView",
+      "C": "ListBox",
+      "D": "DropDownList"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which of the following is a data access control?",
+    "options": {
+      "A": "Repeater",
+      "B": "SqlDataSource",
+      "C": "Label",
+      "D": "HyperLink"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What does ExecuteReader() do?",
+    "options": {
+      "A": "Executes insert queries",
+      "B": "Deletes a row",
+      "C": "Returns multiple rows",
+      "D": "Sets a cookie"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which method is used to execute an insert or update SQL statement?",
+    "options": {
+      "A": "ExecuteReader()",
+      "B": "ExecuteNonQuery()",
+      "C": "ExecuteScalar()",
+      "D": "ExecuteData()"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which method returns only one value from a query?",
+    "options": {
+      "A": "ExecuteReader()",
+      "B": "ExecuteScalar()",
+      "C": "ExecuteNonQuery()",
+      "D": "ExecuteLoop()"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What is required for using SqlConnection?",
+    "options": {
+      "A": "System.Web",
+      "B": "System.Net",
+      "C": "System.Data.SqlClient",
+      "D": "System.Data.OleDb"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which class is used for Access database connection?",
+    "options": {
+      "A": "SqlConnection",
+      "B": "OleDbConnection",
+      "C": "OracleConnection",
+      "D": "MySqlConnection"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which binding type is used to display lists or tables?",
+    "options": {
+      "A": "Simple binding",
+      "B": "Repeated binding",
+      "C": "Manual rendering",
+      "D": "Custom injection"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What does the DataBind() method do?",
+    "options": {
+      "A": "Connects to SQL Server",
+      "B": "Links data to a control",
+      "C": "Saves data to XML",
+      "D": "Starts a session"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which control is used to display one record in detail?",
+    "options": {
+      "A": "GridView",
+      "B": "Repeater",
+      "C": "DetailsView",
+      "D": "TextBox"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What is a major benefit of data binding in ASP.NET?",
+    "options": {
+      "A": "Page reloads faster",
+      "B": "Server is not used",
+      "C": "Developer writes less repetitive code",
+      "D": "All data is stored in ViewState"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which method should be called to read next row in DataReader?",
+    "options": {
+      "A": "Read()",
+      "B": "MoveNext()",
+      "C": "Execute()",
+      "D": "Open()"
+    },
+    "correctAnswer": "A",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which HTML form attribute is required for file uploads to work in ASP.NET?",
+    "options": {
+      "A": "method=\"get\"",
+      "B": "enctype=\"multipart/form-data\"",
+      "C": "target=\"_blank\"",
+      "D": "type=\"file\""
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which control is used to upload files in ASP.NET Web Forms?",
+    "options": {
+      "A": "FileInput",
+      "B": "UploadBox",
+      "C": "FileUpload",
+      "D": "HtmlUpload"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What is the purpose of HasFile property?",
+    "options": {
+      "A": "To save the file",
+      "B": "To preview the file",
+      "C": "To check if a file is selected",
+      "D": "To delete the file"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What should you do before saving the uploaded file to ~/Uploads/?",
+    "options": {
+      "A": "Make sure the folder has write permissions",
+      "B": "Create a database connection",
+      "C": "Restart IIS",
+      "D": "Rename web.config"
+    },
+    "correctAnswer": "A",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which of the following restricts file types in upload logic?",
+    "options": {
+      "A": "FileUpload.MaxLength",
+      "B": "MIME decoding",
+      "C": "Checking Path.GetExtension()",
+      "D": "Limiting TextBox input"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "How do you restrict file size in ASP.NET Web Forms?",
+    "options": {
+      "A": "Set maxUploadSize attribute",
+      "B": "Limit in browser settings",
+      "C": "Set maxRequestLength in Web.config",
+      "D": "Use cookies"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which namespace is needed to work with image metadata (width, height)?",
+    "options": {
+      "A": "System.IO",
+      "B": "System.Drawing",
+      "C": "System.Web",
+      "D": "System.Xml"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "How do you avoid overwriting when uploading files with the same name?",
+    "options": {
+      "A": "Skip upload",
+      "B": "Store in database instead",
+      "C": "Rename using GUID",
+      "D": "Use File.Exists()"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "How do you protect upload folder from unauthorized users?",
+    "options": {
+      "A": "Place folder outside project",
+      "B": "Deny access in Web.config",
+      "C": "Rename the folder",
+      "D": "Add password in code"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which method is best for getting a single number result from a SQL query?",
+    "options": {
+      "A": "ExecuteReader()",
+      "B": "ExecuteNonQuery()",
+      "C": "ExecuteScalar()",
+      "D": "Read()"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What is the file extension for ASP.NET user controls?",
+    "options": {
+      "A": ".asp",
+      "B": ".aspx",
+      "C": ".ascx",
+      "D": ".html"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which directive is used at the beginning of a user control file?",
+    "options": {
+      "A": "<%@ Page %>",
+      "B": "<%@ Master %>",
+      "C": "<%@ Control %>",
+      "D": "<%@ Script %>"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which type of user control interacts with the hosting web page?",
+    "options": {
+      "A": "Static",
+      "B": "Passive",
+      "C": "Independent",
+      "D": "Integrated"
+    },
+    "correctAnswer": "D",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Where should theme files be placed in an ASP.NET project?",
+    "options": {
+      "A": "App_Data",
+      "B": "App_Themes",
+      "C": "App_Code",
+      "D": "Styles"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What does the GridView control primarily display?",
+    "options": {
+      "A": "A single value",
+      "B": "An image",
+      "C": "A multi-column data table",
+      "D": "A menu"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which method is used to execute a command that returns a single value?",
+    "options": {
+      "A": "ExecuteReader()",
+      "B": "ExecuteNonQuery()",
+      "C": "ExecuteScalar()",
+      "D": "ExecuteQuery()"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What is the main advantage of the DataReader over the DataSet?",
+    "options": {
+      "A": "More readable",
+      "B": "Allows backward navigation",
+      "C": "Better performance",
+      "D": "Allows editing"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "In which control can a BoundField be used?",
+    "options": {
+      "A": "Repeater",
+      "B": "GridView",
+      "C": "FormView",
+      "D": "SqlDataSource"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which is not a method of the Command object?",
+    "options": {
+      "A": "ExecuteReader()",
+      "B": "ExecuteQuery()",
+      "C": "ExecuteNonQuery()",
+      "D": "ExecuteScalar()"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What type of binding displays a list of values like a full table?",
+    "options": {
+      "A": "Dual-value binding",
+      "B": "Simple binding",
+      "C": "List binding",
+      "D": "Repeated-value binding"
+    },
+    "correctAnswer": "D",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which of the following is not a data display control in ASP.NET?",
+    "options": {
+      "A": "GridView",
+      "B": "DataList",
+      "C": "SqlDataSource",
+      "D": "Repeater"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which attribute is used in the Register directive to define the file path?",
+    "options": {
+      "A": "Path",
+      "B": "Src",
+      "C": "File",
+      "D": "ControlFile"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What is the extension of a master page file in ASP.NET?",
+    "options": {
+      "A": ".ascx",
+      "B": ".aspx",
+      "C": ".master",
+      "D": ".cs"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which section of the web.config file contains connection strings?",
+    "options": {
+      "A": "<system.web>",
+      "B": "<connectionString>",
+      "C": "<appSettings>",
+      "D": "<connectionStrings>"
+    },
+    "correctAnswer": "D",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which namespace is needed to connect to a SQL Server database?",
+    "options": {
+      "A": "System.Data.Oracle",
+      "B": "System.Data.SqlClient",
+      "C": "System.OleDb",
+      "D": "System.Data.Access"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What does ExecuteNonQuery() return?",
+    "options": {
+      "A": "First row",
+      "B": "Number of rows affected",
+      "C": "True or False",
+      "D": "DataSet"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which type of style sheet is placed in a separate CSS file?",
+    "options": {
+      "A": "Inline style",
+      "B": "Internal style sheet",
+      "C": "External style sheet",
+      "D": "Manual style"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which control allows only read-only, forward-only data access?",
+    "options": {
+      "A": "SqlDataSource",
+      "B": "DataReader",
+      "C": "DataSet",
+      "D": "GridView"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What must you call after setting a DataSource to a control to make it work?",
+    "options": {
+      "A": "Load()",
+      "B": "Fetch()",
+      "C": "Bind()",
+      "D": "DataBind()"
+    },
+    "correctAnswer": "D",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which method is used to retrieve a record from a DataReader?",
+    "options": {
+      "A": "Fetch()",
+      "B": "Read()",
+      "C": "Execute()",
+      "D": "Run()"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which control is used in ASP.NET Web Forms to upload files?",
+    "options": {
+      "A": "FileBrowser",
+      "B": "FileUploader",
+      "C": "FileUpload",
+      "D": "UploadControl"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What attribute must be set in the <form> tag to handle file uploads?",
+    "options": {
+      "A": "enctype=\"application/json\"",
+      "B": "enctype=\"text/plain\"",
+      "C": "enctype=\"multipart/form-data\"",
+      "D": "enctype=\"form-data\""
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What method checks whether a file was selected for upload?",
+    "options": {
+      "A": "IsSelected",
+      "B": "HasFile",
+      "C": "Exists",
+      "D": "IsUploaded"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "How do you save the uploaded file on the server?",
+    "options": {
+      "A": "SaveTo()",
+      "B": "Save()",
+      "C": "SaveAs()",
+      "D": "WriteFile()"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What is the correct folder path for uploaded files in the project?",
+    "options": {
+      "A": "/Public/",
+      "B": "/Images/",
+      "C": "~/Uploads/",
+      "D": "~/Data/"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What method creates a folder if it doesn't exist?",
+    "options": {
+      "A": "File.CreateDirectory()",
+      "B": "System.IO.Folder.Create()",
+      "C": "Directory.CreateDirectory()",
+      "D": "Folder.Make()"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which file extensions are allowed in the given upload example?",
+    "options": {
+      "A": ".jpg and .pdf",
+      "B": ".jpg and .png",
+      "C": ".png and .gif",
+      "D": ".doc and .pdf"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "How is maximum file upload size controlled in ASP.NET?",
+    "options": {
+      "A": "uploadLimit in Web.config",
+      "B": "maxUpload in form tag",
+      "C": "maxRequestLength in Web.config",
+      "D": "fileSizeLimit attribute"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What namespace provides image metadata such as width and height?",
+    "options": {
+      "A": "System.Media",
+      "B": "System.Images",
+      "C": "System.Drawing",
+      "D": "System.Photo"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What is the purpose of Server.MapPath()?",
+    "options": {
+      "A": "Generates virtual path",
+      "B": "Converts virtual path to physical path",
+      "C": "Maps directory structure",
+      "D": "Finds IP address"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which element displays the uploaded image on the page?",
+    "options": {
+      "A": "<img>",
+      "B": "<asp:File>",
+      "C": "<asp:Image>",
+      "D": "<picture>"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "How can path traversal be prevented?",
+    "options": {
+      "A": "By using Path.IsPathRooted()",
+      "B": "By renaming the file",
+      "C": "By uploading only images",
+      "D": "By disabling file write"
+    },
+    "correctAnswer": "A",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What is the best way to rename uploaded files to prevent duplicates?",
+    "options": {
+      "A": "Use file hash",
+      "B": "Append timestamp",
+      "C": "Use GUIDs",
+      "D": "Use random number"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Where should files be uploaded before scanning for viruses?",
+    "options": {
+      "A": "~/Uploads/",
+      "B": "~/App_Data/",
+      "C": "~/TempUploads/",
+      "D": "~/Secure/"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which tool is mentioned as a free antivirus scanner?",
+    "options": {
+      "A": "Avast",
+      "B": "Cloudmersive",
+      "C": "ClamAV",
+      "D": "AVG"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What should you do before moving a file from TempUploads to Uploads?",
+    "options": {
+      "A": "Resize the image",
+      "B": "Check file extension",
+      "C": "Scan for viruses",
+      "D": "Encrypt the file"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "What details should be logged when a file is uploaded?",
+    "options": {
+      "A": "Only file name",
+      "B": "Only user IP",
+      "C": "User/IP, file name, size, timestamp",
+      "D": "Only file size"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which ASP.NET folder is used for storing logs?",
+    "options": {
+      "A": "/Logs/",
+      "B": "/App_Logs/",
+      "C": "/App_Data/",
+      "D": "/Temp/"
+    },
+    "correctAnswer": "C",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which is faster for storing uploaded files?",
+    "options": {
+      "A": "Database (BLOB)",
+      "B": "Filesystem",
+      "C": "Cloud storage",
+      "D": "FTP server"
+    },
+    "correctAnswer": "B",
+    "explanation": "N/A"
+  },
+  {
+    "question": "Which of the following is a valid reason for using data storage over file system?",
+    "options": {
+      "A": "Easier virus scanning",
+      "B": "Scalability",
+      "C": "Performance",
+      "D": "Centralized management"
+    },
+    "correctAnswer": "D",
+    "explanation": "N/A"
+  }
+]
