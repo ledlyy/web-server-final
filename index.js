@@ -13,16 +13,22 @@ const container = document.getElementById('quiz-container');
     quizData = await res.json();
     renderQuestion();
   } catch (err) {
-    container.innerHTML = `<p style="text-align:center">❌ Could not load <strong>q.json</strong>.<br>Run the page through a local server.</p>`;
+    container.innerHTML = `
+      <p style="text-align:center">
+        ❌ Could not load <strong>q.json</strong>.<br>
+        Run the page through a local server.
+      </p>`;
     console.error(err);
   }
 })();
 
 /* -------- RENDERERS -------- */
 function renderQuestion() {
-  if (idx >= quizData.length) return renderScore();
+  if (idx >= quizData.length) {
+    return renderScore();
+  }
 
-  const { question, options, correctAnswer, explanation } = quizData[idx];
+  const { question, options } = quizData[idx];
 
   const card = document.createElement('div');
   card.className = 'card';
@@ -38,7 +44,10 @@ function renderQuestion() {
     const btn = document.createElement('button');
     btn.className = 'option';
     btn.textContent = `${key}: ${text}`;
-    btn.addEventListener('click', () => handleAnswer(btn, key, correctAnswer, explanation));
+    btn.addEventListener('click', () => {
+      const { correctAnswer, explanation } = quizData[idx];
+      handleAnswer(btn, key, correctAnswer, explanation);
+    });
     opts.appendChild(btn);
   });
 
@@ -50,17 +59,20 @@ function renderQuestion() {
 function renderScore() {
   container.innerHTML = `
     <div class="card" id="score">
-      <p style="font-size:1.3rem;font-weight:600;margin-bottom:0.5rem;">Quiz finished!</p>
+      <p style="font-size:1.3rem; font-weight:600; margin-bottom:0.5rem;">
+        Quiz finished!
+      </p>
       <p>You scored <strong>${score}</strong> / <strong>${quizData.length}</strong>.</p>
-    </div>
-  `;
+    </div>`;
 }
 
 /* -------- LOGIC -------- */
 function handleAnswer(btn, selected, correct, explanation) {
+  // Disable all option buttons
   const buttons = [...document.querySelectorAll('.option')];
-  buttons.forEach(b => (b.disabled = true));
+  buttons.forEach(b => b.disabled = true);
 
+  // Mark correct/incorrect
   if (selected === correct) {
     btn.classList.add('correct');
     score++;
@@ -70,15 +82,20 @@ function handleAnswer(btn, selected, correct, explanation) {
     if (correctBtn) correctBtn.classList.add('correct');
   }
 
-  /* Show explanation */
+  // Show explanation
   const expDiv = document.createElement('div');
   expDiv.className = 'explanation';
   expDiv.textContent = explanation;
   btn.closest('.card').appendChild(expDiv);
 
-  /* Next question after delay */
-  setTimeout(() => {
+  // Create & insert Next Question button
+  const nextBtn = document.createElement('button');
+  nextBtn.className = 'next-btn';
+  nextBtn.textContent = idx < quizData.length - 1 ? 'Next Question' : 'See Score';
+  nextBtn.addEventListener('click', () => {
     idx++;
     renderQuestion();
-  }, 2000);
+  });
+
+  btn.closest('.card').appendChild(nextBtn);
 }

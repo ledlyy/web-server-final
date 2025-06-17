@@ -164,6 +164,28 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+/* Next Question button */
+.next-btn {
+  display: block;
+  margin: 1.5rem auto 0;
+  padding: 0.8rem 1.2rem;
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  background: var(--accent);
+  color: var(--text-main);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.next-btn:hover,
+.next-btn:focus-visible {
+  background: lighten(var(--accent), 10%);
+  transform: translateY(-2px);
+  outline: none;
+}
+
 
 /* ---------- Mobile / Responsive Tweaks ---------- */
 /* Ultra-small devices ≤360px */
