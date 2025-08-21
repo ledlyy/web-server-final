@@ -1,3 +1,4 @@
+// index.js
 document.addEventListener('DOMContentLoaded', function() {
     // DOM Elements
     const dataUploadSection = document.getElementById('dataUpload');
@@ -12,11 +13,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const explanationContainer = document.querySelector('.explanation');
     const explanationText = document.getElementById('explanation-text');
     const aiToggle = document.getElementById('aiToggle');
-    const aiChat = document.querySelector('.ai-chat');
-    const aiClose = document.getElementById('closeChatBtn'); // Corrected ID
-    const aiInput = document.getElementById('chatInput'); // Corrected ID
-    const aiSendBtn = document.getElementById('sendChatBtn'); // Corrected ID
-    const aiMessages = document.getElementById('chatMessages'); // Corrected ID
+    const aiChat = document.querySelector('.ai-chat-modal');
+    const aiClose = document.getElementById('closeChatBtn');
+    const aiInput = document.getElementById('chatInput');
+    const aiSendBtn = document.getElementById('sendChatBtn');
+    const aiMessages = document.getElementById('chatMessages');
     const dropZone = document.getElementById('dropZone');
     const fileInput = document.getElementById('fileInput');
     const jsonPaste = document.getElementById('jsonPaste');
@@ -29,6 +30,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const hideScoreToggle = document.getElementById('hideScoreToggle');
     const startNewQuizBtn = document.getElementById('startNewQuizBtn');
     const reviewAnswersBtn = document.getElementById('reviewAnswersBtn');
+    const correctCountElem = document.getElementById('correctCount');
+    const wrongCountElem = document.getElementById('wrongCount');
+    const resultDetailsContainer = document.getElementById('resultDetailsContainer');
+    const reviewQuizSection = document.getElementById('reviewQuizSection');
 
     // Quiz State
     let currentQuestion = 0;
@@ -138,6 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         updateProgress();
         updateNavigationButtons();
+        explanationContainer.style.display = 'none';
     }
     
     function selectOption(key, element) {
@@ -156,6 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
         prevBtn.disabled = currentQuestion === 0;
         nextBtn.disabled = currentQuestion === questions.length - 1;
         submitBtn.style.display = currentQuestion === questions.length - 1 ? 'block' : 'none';
+        nextBtn.style.display = currentQuestion === questions.length - 1 ? 'none' : 'block';
     }
     
     function prevQuestion() {
@@ -173,13 +180,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function calculateScore() {
-        let score = 0;
+        let correctCount = 0;
+        let wrongCount = 0;
         for (let i = 0; i < questions.length; i++) {
             if (userAnswers[i] === questions[i].correctAnswer) {
-                score++;
+                correctCount++;
+            } else {
+                wrongCount++;
             }
         }
-        return score;
+        return { correctCount, wrongCount };
     }
 
     function stopTimer() {
@@ -198,18 +208,50 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function submitQuiz() {
         stopTimer();
-        const score = calculateScore();
+        const { correctCount, wrongCount } = calculateScore();
         const timeTaken = quizTimer.textContent;
 
-        finalScore.textContent = `${score} / ${questions.length}`;
-        finalTime.textContent = timeTaken;
-        
-        // Hide score if the toggle is checked
         if (hideScoreToggle.checked) {
             finalScore.textContent = '***';
+            correctCountElem.textContent = '***';
+            wrongCountElem.textContent = '***';
+        } else {
+            finalScore.textContent = `${correctCount} / ${questions.length}`;
+            correctCountElem.textContent = correctCount;
+            wrongCountElem.textContent = wrongCount;
         }
+        finalTime.textContent = timeTaken;
+        
+        resultsModal.style.display = 'flex';
+    }
+    
+    function showResults() {
+        quizContainer.style.display = 'none';
+        resultsModal.style.display = 'none';
+        reviewQuizSection.style.display = 'block';
+        
+        const reviewList = document.getElementById('reviewList');
+        reviewList.innerHTML = '';
 
-        resultsModal.style.display = 'block';
+        questions.forEach((q, index) => {
+            const resultItem = document.createElement('div');
+            resultItem.classList.add('result-item');
+            resultItem.innerHTML = `
+                <div class="result-question">${index + 1}. ${q.question}</div>
+                <div class="result-answer">
+                    Your Answer: 
+                    <span class="user-answer ${userAnswers[index] === q.correctAnswer ? 'correct' : 'incorrect'}">
+                        ${userAnswers[index] ? q.options[userAnswers[index]] : 'Cevapsız'}
+                        <i class="fas ${userAnswers[index] === q.correctAnswer ? 'fa-check-circle' : 'fa-times-circle'}"></i>
+                    </span>
+                    <br>
+                    <span class="correct-answer">
+                        Correct Answer: ${q.options[q.correctAnswer]}
+                    </span>
+                </div>
+            `;
+            reviewList.appendChild(resultItem);
+        });
     }
 
     function resetQuiz() {
@@ -219,6 +261,7 @@ document.addEventListener('DOMContentLoaded', function() {
         quizContainer.style.display = 'none';
         dataUploadSection.style.display = 'block';
         resultsModal.style.display = 'none';
+        reviewQuizSection.style.display = 'none';
         quizTimer.textContent = '00:00';
     }
 
@@ -230,10 +273,7 @@ document.addEventListener('DOMContentLoaded', function() {
         resultsModal.style.display = 'none';
     });
     startNewQuizBtn.addEventListener('click', resetQuiz);
-    reviewAnswersBtn.addEventListener('click', () => {
-      // You can implement review logic here. For now, let's just close the modal.
-      resultsModal.style.display = 'none';
-    });
+    reviewAnswersBtn.addEventListener('click', showResults);
     
     // AI Chat listeners (unchanged)
     aiToggle.addEventListener('click', toggleAIChat);

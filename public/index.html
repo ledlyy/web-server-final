@@ -29,7 +29,7 @@
 
   <!-- Main Content Container -->
   <div class="container">
-    <!-- Data Upload Section (New) -->
+    <!-- Data Upload Section -->
     <div class="quiz-card glassmorphism-card" id="dataUpload" style="display: block;">
       <h2><i class="fas fa-database"></i> Veri Kaynağını Yükle</h2>
       <p class="text-secondary">Açık kaynak vizyonumuzun bir parçası olarak kendi JSON veri setlerini ekleyebilirsin.</p>
@@ -94,16 +94,16 @@
       <!-- Navigation Buttons -->
       <div class="nav-buttons">
         <button class="btn btn-secondary" id="prev-btn" disabled>
-          <i class="fas fa-arrow-left"></i> Previous
+          <i class="fas fa-arrow-left"></i> Önceki
         </button>
         <button class="btn btn-primary" id="next-btn">
-          Next <i class="fas fa-arrow-right"></i>
+          Sonraki <i class="fas fa-arrow-right"></i>
         </button>
       </div>
 
       <!-- Submit Button -->
       <button class="btn btn-success" id="submit-btn" style="display: none;">
-        <i class="fas fa-check"></i> Finish Quiz
+        <i class="fas fa-check"></i> Quizi Bitir
       </button>
     </div>
   </div>
@@ -113,15 +113,26 @@
     <div class="modal-content glassmorphism-card">
       <span class="close-button">&times;</span>
       <h3><i class="fas fa-trophy"></i> Quiz Sonuçları</h3>
-      <div class="result-details">
+      <div class="result-details" id="resultDetailsContainer">
+        <p>Doğru: <span id="correctCount"></span></p>
+        <p>Yanlış: <span id="wrongCount"></span></p>
         <p>Puanın: <span id="finalScore"></span></p>
         <p>Süre: <span id="finalTime"></span></p>
       </div>
-      <p class="text-secondary">Açık kaynaklı veri setimize katkıda bulunarak bu platformun büyümesine yardımcı olabilirsin!</p>
+      <p class="text-secondary">Açık kaynaklı JSON veri setimize katkıda bulunarak bu platformun büyümesine yardımcı olabilirsin! <a href="https://github.com/ledlyy/modern-quiz-2025" target="_blank">GitHub Deposu</a></p>
       <div class="modal-buttons">
         <button class="btn btn-primary" id="startNewQuizBtn">Yeni Quiz Başlat</button>
         <button class="btn btn-secondary" id="reviewAnswersBtn">Cevapları Gözden Geçir</button>
       </div>
+    </div>
+  </div>
+
+  <!-- Review Quiz Section -->
+  <div class="quiz-card glassmorphism-card" id="reviewQuizSection" style="display: none;">
+    <h2><i class="fas fa-history"></i> Cevapları Gözden Geçir</h2>
+    <div id="reviewList"></div>
+    <div class="nav-buttons">
+      <button class="btn btn-primary" id="startNewQuizBtnReview">Yeni Quiz Başlat</button>
     </div>
   </div>
 

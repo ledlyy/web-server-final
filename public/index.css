@@ -533,3 +533,49 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+/* Review Section Styles */
+#reviewQuizSection {
+  text-align: left;
+}
+
+.result-item {
+  background: var(--bg-card);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-md);
+  border-left: 4px solid var(--primary);
+}
+
+.result-question {
+  font-weight: bold;
+  margin-bottom: var(--space-sm);
+}
+
+.result-answer {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.user-answer.correct {
+  color: var(--success);
+  font-weight: bold;
+}
+
+.user-answer.incorrect {
+  color: var(--error);
+  font-weight: bold;
+}
+
+.correct-answer {
+  color: var(--text-primary);
+  font-weight: normal;
+}
+
+.fa-check-circle {
+  color: var(--success);
+}
+
+.fa-times-circle {
+  color: var(--error);
+}
