@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI-Powered Quiz Platform 2025</title>
+  <title>Open Source Quiz Platform</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="/index.css" rel="stylesheet">
 </head>
@@ -29,12 +29,49 @@
 
   <!-- Main Content -->
   <div class="container">
-    <div class="quiz-card" id="quizContainer">
-      <!-- Progress Bar -->
+    <!-- Data Upload Section (New) -->
+    <div class="quiz-card" id="dataUpload" style="display: block;">
+      <h2><i class="fas fa-database"></i> Veri Kaynağınızı Yükleyin</h2>
+      <p class="text-secondary">Açık kaynak vizyonumuzun bir parçası olarak kendi JSON veri setlerinizi ekleyebilirsiniz. Aşağıdaki yöntemlerden birini kullanın:</p>
+      
+      <div id="dropZone" class="drop-zone">
+        <p><i class="fas fa-cloud-upload-alt"></i> JSON dosyasını buraya sürükle-bırak</p>
+        <p class="text-secondary">veya</p>
+        <label class="btn btn-primary">
+            Dosya Seç <input type="file" id="fileInput" accept=".json" style="display: none;">
+        </label>
+      </div>
+
+      <div class="separator"><span>veya</span></div>
+
+      <div class="paste-zone">
+        <textarea id="jsonPaste" placeholder="JSON verisini buraya yapıştırın..."></textarea>
+        <button class="btn btn-primary" id="pasteBtn">Veriyi Yükle</button>
+      </div>
+    </div>
+
+    <!-- Quiz Section (Existing) -->
+    <div class="quiz-card" id="quizContainer" style="display: none;">
+      <!-- Quiz Progress and Settings -->
+      <div class="quiz-header">
+        <div class="progress-text" id="progressText">Question 1 of 85</div>
+        <div class="quiz-settings">
+          <label class="switch">
+            <input type="checkbox" id="hideScoreToggle">
+            <span class="slider round"></span>
+          </label>
+          <span class="text-secondary">Puanı Gizle</span>
+        </div>
+      </div>
       <div class="progress-container">
         <div class="progress-bar" id="progressBar"></div>
       </div>
-      <div class="progress-text" id="progressText">Question 1 of 85</div>
+
+      <!-- Timer (New) -->
+      <div class="timer-container">
+        <i class="fas fa-stopwatch"></i>
+        <span id="quizTimer">00:00</span>
+      </div>
 
       <!-- AI Hint (hidden by default) -->
       <div class="ai-hint" id="aiHint" style="display: none;">
@@ -66,12 +103,27 @@
 
       <!-- Submit Button -->
       <button class="btn btn-success" id="submit-btn" style="display: none;">
-        <i class="fas fa-check"></i> Submit Quiz
+        <i class="fas fa-check"></i> Finish Quiz
       </button>
     </div>
   </div>
 
-  <!-- AI Chat Modal -->
+  <!-- Results Modal (New) -->
+  <div id="resultsModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h3><i class="fas fa-trophy"></i> Quiz Sonuçları</h3>
+      <p>Puanınız: <span id="finalScore"></span></p>
+      <p>Süre: <span id="finalTime"></span></p>
+      <p class="text-secondary">Açık kaynaklı veri setimize katkıda bulunarak bu platformun büyümesine yardımcı olabilirsiniz!</p>
+      <div class="modal-buttons">
+        <button class="btn btn-primary" id="startNewQuizBtn">Yeni Quiz Başlat</button>
+        <button class="btn btn-secondary" id="reviewAnswersBtn">Cevapları Gözden Geçir</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI Chat Modal (Existing) -->
   <div class="ai-chat-modal" id="aiChatModal">
     <div class="ai-chat-content">
       <div class="ai-chat-header">
