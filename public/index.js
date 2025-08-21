@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     // DOM Elements
     const questionText = document.getElementById('question-text');
@@ -26,222 +25,128 @@ document.addEventListener('DOMContentLoaded', function() {
     async function initQuiz() {
         try {
             // Load questions from JSON file
-            const response = await fetch('data/questions.json');
+            // ** DÜZELTME: Dosya yolu artık doğrudan "q.json" olmalıdır çünkü public klasörü kök dizin olarak servis ediliyor. **
+            const response = await fetch('q.json');
+            
+            // Hata kontrolü: Dosya bulunamazsa uyarı ver
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            
             questions = await response.json();
             
             // Initialize user answers array
             userAnswers = new Array(questions.length).fill(null);
             
-            // Load the first question
-            loadQuestion(currentQuestion);
+            // Display the first question
+            loadQuestion();
         } catch (error) {
-            console.error('Error loading questions:', error);
-            questionText.textContent = 'Sorular yüklenirken bir hata oluştu.';
+            console.error("Quiz questions could not be loaded:", error);
+            // Kullanıcıya bir hata mesajı gösterilebilir
+            if (questionText) {
+                questionText.textContent = "Sorular yüklenirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.";
+            }
         }
     }
-    
-    // Load a question
-    function loadQuestion(index) {
-        const question = questions[index];
+
+    // Function to load a question
+    function loadQuestion() {
+        if (questions.length === 0) {
+            console.warn("No questions loaded.");
+            return;
+        }
         
-        // Update question text
-        questionText.textContent = question.question;
+        const q = questions[currentQuestion];
+        questionText.textContent = q.question;
         
-        // Update badges
-        const badges = document.querySelector('.badges');
-        badges.innerHTML = `
-            <span class="badge difficulty-${question.difficulty}">${getDifficultyText(question.difficulty)}</span>
-            <span class="badge topic">${question.topic}</span>
-        `;
-        
-        // Update options
+        // Clear previous options
         optionsContainer.innerHTML = '';
-        for (const [key, value] of Object.entries(question.options)) {
-            const optionElement = document.createElement('div');
-            optionElement.className = 'option';
-            optionElement.dataset.option = key;
-            
+        
+        // Create new options
+        for (const [key, value] of Object.entries(q.options)) {
+            const option = document.createElement('div');
+            option.classList.add('option');
             // Check if this option was previously selected
-            if (userAnswers[index] === key) {
-                optionElement.classList.add('selected');
+            if (userAnswers[currentQuestion] === key) {
+                option.classList.add('selected');
             }
-            
-            optionElement.innerHTML = `
-                <span class="option-key">${key}</span>
-                <span class="option-text">${value}</span>
-            `;
-            
-            optionElement.addEventListener('click', () => selectOption(key));
-            optionsContainer.appendChild(optionElement);
+            option.textContent = `${key}. ${value}`;
+            option.dataset.key = key;
+            option.addEventListener('click', () => selectOption(key, option));
+            optionsContainer.appendChild(option);
         }
         
-        // Update progress
-        const progress = ((index + 1) / questions.length) * 100;
+        updateProgress();
+        updateNavigationButtons();
+        updateExplanation();
+    }
+    
+    // Function to handle option selection
+    function selectOption(key, element) {
+        // Remove 'selected' class from all options
+        document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+        // Add 'selected' class to the clicked option
+        element.classList.add('selected');
+        userAnswers[currentQuestion] = key;
+    }
+    
+    // Function to update progress bar and text
+    function updateProgress() {
+        const progress = ((currentQuestion + 1) / questions.length) * 100;
         progressBar.style.width = `${progress}%`;
-        progressText.textContent = `Soru ${index + 1}/${questions.length}`;
-        
-        // Update navigation buttons
-        prevBtn.disabled = index === 0;
-        nextBtn.disabled = index === questions.length - 1;
-        
-        // Show/hide submit button
-        if (index === questions.length - 1) {
-            nextBtn.style.display = 'none';
-            submitBtn.style.display = 'block';
+        progressText.textContent = `Question ${currentQuestion + 1} of ${questions.length}`;
+    }
+    
+    // Function to update navigation buttons
+    function updateNavigationButtons() {
+        prevBtn.disabled = currentQuestion === 0;
+        nextBtn.disabled = currentQuestion === questions.length - 1;
+        submitBtn.style.display = currentQuestion === questions.length - 1 ? 'block' : 'none';
+    }
+    
+    // Function to update explanation visibility
+    function updateExplanation() {
+        const answer = userAnswers[currentQuestion];
+        const q = questions[currentQuestion];
+        if (answer !== null && answer === q.correctAnswer) {
+            explanationContainer.style.display = 'block';
+            explanationText.textContent = q.explanation;
         } else {
-            nextBtn.style.display = 'block';
-            submitBtn.style.display = 'none';
-        }
-        
-        // Hide explanation
-        explanationContainer.style.display = 'none';
-    }
-    
-    // Get difficulty text in Turkish
-    function getDifficultyText(difficulty) {
-        const difficultyMap = {
-            'easy': 'Kolay',
-            'medium': 'Orta',
-            'hard': 'Zor'
-        };
-        return difficultyMap[difficulty] || difficulty;
-    }
-    
-    // Select an option
-    function selectOption(option) {
-        // Remove selected class from all options
-        document.querySelectorAll('.option').forEach(opt => {
-            opt.classList.remove('selected');
-        });
-        
-        // Add selected class to clicked option
-        const selectedOption = document.querySelector(`.option[data-option="${option}"]`);
-        selectedOption.classList.add('selected');
-        
-        // Save user's answer
-        userAnswers[currentQuestion] = option;
-        
-        // Show explanation
-        showExplanation(option);
-    }
-    
-    // Show explanation
-    function showExplanation(selectedOption) {
-        const question = questions[currentQuestion];
-        explanationText.textContent = question.explanation;
-        explanationContainer.style.display = 'block';
-        
-        // Mark correct/incorrect answers
-        document.querySelectorAll('.option').forEach(opt => {
-            const optionValue = opt.dataset.option;
-            if (optionValue === question.correctAnswer) {
-                opt.classList.add('correct');
-            } else if (optionValue === selectedOption && selectedOption !== question.correctAnswer) {
-                opt.classList.add('incorrect');
-            }
-        });
-    }
-    
-    // Navigate to next question
-    function nextQuestion() {
-        if (currentQuestion < questions.length - 1) {
-            currentQuestion++;
-            loadQuestion(currentQuestion);
+            explanationContainer.style.display = 'none';
         }
     }
     
-    // Navigate to previous question
+    // Function to go to the previous question
     function prevQuestion() {
         if (currentQuestion > 0) {
             currentQuestion--;
-            loadQuestion(currentQuestion);
+            loadQuestion();
         }
     }
     
-    // Submit quiz
+    // Function to go to the next question
+    function nextQuestion() {
+        if (currentQuestion < questions.length - 1) {
+            currentQuestion++;
+            loadQuestion();
+        }
+    }
+    
+    // Function to submit the quiz and show results
     function submitQuiz() {
-        // Calculate score
         let score = 0;
-        userAnswers.forEach((answer, index) => {
-            if (answer === questions[index].correctAnswer) {
+        for (let i = 0; i < questions.length; i++) {
+            if (userAnswers[i] === questions[i].correctAnswer) {
                 score++;
             }
-        });
-        
-        // Display results
-        questionText.textContent = `Sınav Tamamlandı! Skorunuz: ${score}/${questions.length}`;
-        optionsContainer.innerHTML = '';
-        explanationContainer.style.display = 'none';
-        prevBtn.style.display = 'none';
-        nextBtn.style.display = 'none';
-        submitBtn.style.display = 'none';
-        
-        // Show detailed results
-        const resultsHTML = `
-            <div class="results">
-                <h3>Detaylı Sonuçlar</h3>
-                ${questions.map((question, index) => `
-                    <div class="result-item ${userAnswers[index] === question.correctAnswer ? 'correct' : 'incorrect'}">
-                        <p><strong>Soru ${index + 1}:</strong> ${question.question}</p>
-                        <p>Verdiğiniz Cevap: ${userAnswers[index] ? question.options[userAnswers[index]] : 'Cevaplanmadı'}</p>
-                        <p>Doğru Cevap: ${question.options[question.correctAnswer]}</p>
-                    </div>
-                `).join('')}
-            </div>
-        `;
-        
-        optionsContainer.innerHTML = resultsHTML;
-    }
-    
-    // AI Assistant functions
-    function toggleAIChat() {
-        aiChat.style.display = aiChat.style.display === 'none' ? 'block' : 'none';
-    }
-    
-    function sendAIMessage() {
-        const message = aiInput.value.trim();
-        if (message) {
-            // Add user message
-            addMessage(message, 'user');
-            
-            // Simulate AI response
-            setTimeout(() => {
-                let response = '';
-                if (message.toLowerCase().includes('merhaba') || message.toLowerCase().includes('selam')) {
-                    response = 'Merhaba! Sınavla ilgili nasıl yardımcı olabilirim?';
-                } else if (message.toLowerCase().includes('ipucu') || message.toLowerCase().includes('yardım')) {
-                    response = 'İpucu: Soruyu dikkatlice okuyun ve tüm seçenekleri gözden geçirin. Zorlanıyorsanız, eleme yöntemini deneyin.';
-                } else {
-                    response = 'Bu konuda daha fazla bilgi için ders notlarınızı gözden geçirmenizi öneririm. Başka bir sorunuz var mı?';
-                }
-                addMessage(response, 'ai');
-            }, 1000);
-            
-            // Clear input
-            aiInput.value = '';
         }
-    }
-    
-    function addMessage(text, sender) {
-        const messageElement = document.createElement('div');
-        messageElement.className = `message ${sender}-message`;
-        messageElement.textContent = text;
-        aiMessages.appendChild(messageElement);
-        aiMessages.scrollTop = aiMessages.scrollHeight;
+        alert(`Quiz finished! You scored ${score} out of ${questions.length}.`);
     }
     
     // Event listeners
     prevBtn.addEventListener('click', prevQuestion);
     nextBtn.addEventListener('click', nextQuestion);
     submitBtn.addEventListener('click', submitQuiz);
-    aiToggle.addEventListener('click', toggleAIChat);
-    aiClose.addEventListener('click', toggleAIChat);
-    aiSendBtn.addEventListener('click', sendAIMessage);
-    aiInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            sendAIMessage();
-        }
-    });
     
     // Initialize the quiz
     initQuiz();
