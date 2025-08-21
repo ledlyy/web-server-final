@@ -1,11 +1,139 @@
-🧠 Modern Quiz App 2025AI-powered quiz application built with modern web technologies and cutting-edge UI/UX design.✨ Features🤖 AI IntegrationSmart AI Assistant - Get hints and explanationsPersonalized Study Recommendations - AI analyzes your performanceInteractive Chat Support - Ask questions anytime🎨 Modern DesignGlassmorphism UI - Beautiful blur effects and transparencyDark/Light Theme - Toggle between themesResponsive Design - Works perfectly on all devicesMicro-animations - Smooth transitions and interactions📊 Advanced AnalyticsReal-time Progress TrackingDetailed Performance MetricsStudy Time AnalysisWeakness Identification⚡ Modern TechnologiesES6+ JavaScript - Modern syntax and featuresCSS Custom Properties - Dynamic themingProgressive Web App ReadyAccessibility Optimized🚀 Quick StartOnline DemoVisit the live demo: https://ledlyy.github.io/modern-quiz-2025Local DevelopmentClone the repositorygit clone https://github.com/ledlyy/modern-quiz-2025.git
-cd modern-quiz-2025
-Install dependenciesnpm install
-Start development servernpm start
-Open in browserhttp://localhost:3000
-🎮 UsageKeyboard Shortcuts1-4 - Select answer optionsH - Get AI hint→ - Next question← - Previous questionEsc - Close AI chatCtrl+Enter - Send AI messageFeatures OverviewAI AssistantToggle AI assistant with the robot buttonGet smart hints based on question difficultyChat with AI for detailed explanationsReceive personalized study recommendationsQuiz NavigationProgress bar shows completion statusQuestion difficulty and topic badgesPrevious/Next navigationKeyboard shortcuts supportPerformance AnalyticsReal-time score trackingAverage time per questionCorrect/incorrect statisticsAI hint usage tracking🛠️ Technologies UsedHTML5 - Semantic markupCSS3 - Modern styling with custom propertiesJavaScript ES6+ - Modern language featuresFont Awesome - IconsGoogle Fonts - Typography📱 Browser SupportChrome (recommended)FirefoxSafariEdge🤝 ContributingFork the repositoryCreate your feature branch (git checkout -b feature/AmazingFeature)Commit your changes (git commit -m 'Add some AmazingFeature')Push to the branch (git push origin feature/AmazingFeature)Open a Pull Request📄 LicenseThis project is licensed under the MIT License - see the LICENSE file for details.🎯 RoadmapMore question categoriesMultiplayer modeAdvanced AI featuresMobile app versionIntegration with learning platforms👤 Authorİbrahim YasinGitHub: @ledlyyWebsite: ibrahimyasin.net🌟 Show your supportGive a ⭐️ if this project helped you!📞 SupportFor support, email mail@ibrahimyasin.net or create an issue in this repository.🧠 Modern Quiz App 2025Yapay zeka destekli, modern web teknolojileri ve son teknoloji UI/UX tasarımı ile oluşturulmuş bir bilgi yarışması uygulaması.✨ Özellikler🤖 Yapay Zeka EntegrasyonuAkıllı Yapay Zeka Asistanı - İpuçları ve açıklamalar alınKişiselleştirilmiş Çalışma Önerileri - Yapay zeka performansınızı analiz ederEtkileşimli Sohbet Desteği - İstediğiniz zaman soru sorun🎨 Modern TasarımGlassmorphism UI - Güzel bulanıklık efektleri ve saydamlıkKoyu/Açık Tema - Temalar arasında geçiş yapınDuyarlı Tasarım - Tüm cihazlarda mükemmel çalışırMikro-animasyonlar - Akıcı geçişler ve etkileşimler📊 Gelişmiş AnalitikGerçek Zamanlı İlerleme TakibiDetaylı Performans MetrikleriÇalışma Süresi AnaliziZayıf Nokta Belirleme⚡ Modern TeknolojilerES6+ JavaScript - Modern sözdizimi ve özelliklerCSS Custom Properties - Dinamik tema oluşturmaProgressive Web App UyumluErişilebilirlik için Optimize Edildi🚀 Hızlı BaşlangıçOnline DemoCanlı demoyu ziyaret edin: https://ledlyy.github.io/modern-quiz-2025Yerel GeliştirmeDepoyu klonlayıngit clone https://github.com/ledlyy/modern-quiz-2025.git
-cd modern-quiz-2025
-Bağımlılıkları yükleyinnpm install
-Geliştirme sunucusunu başlatınnpm start
-Tarayıcıda açınhttp://localhost:3000
-🎮 KullanımKlavye Kısayolları1-4 - Cevap seçeneklerini seçinH - Yapay zekadan ipucu alın→ - Sonraki soru← - Önceki soruEsc - Yapay zeka sohbetini kapatCtrl+Enter - Yapay zeka mesajını gönderÖzelliklere Genel BakışYapay Zeka AsistanıRobot düğmesiyle yapay zeka asistanını aç/kapaSoru zorluğuna göre akıllı ipuçları alınDetaylı açıklamalar için yapay zeka ile sohbet edinKişiselleştirilmiş çalışma önerileri alınBilgi Yarışması Navigasyonuİlerleme çubuğu tamamlanma durumunu gösterirSoru zorluğu ve konu rozetleriÖnceki/Sonraki navigasyonKlavye kısayolları desteğiPerformans AnaliziGerçek zamanlı puan takibiSoru başına ortalama süreDoğru/yanlış istatistikleriYapay zeka ipucu kullanım takibi🛠️ Kullanılan TeknolojilerHTML5 - Anlamsal işaretlemeCSS3 - Özel özelliklerle modern stilJavaScript ES6+ - Modern dil özellikleriFont Awesome - İkonlarGoogle Fonts - Tipografi📱 Tarayıcı DesteğiChrome (önerilen)FirefoxSafariEdge🤝 Katkıda BulunmaDepoyu forklayınÖzellik dalınızı oluşturun (git checkout -b feature/AmazingFeature)Değişikliklerinizi yapın (git commit -m 'Add some AmazingFeature')Dalınıza gönderin (git push origin feature/AmazingFeature)Bir Çekme İsteği (Pull Request) açın📄 LisansBu proje MIT Lisansı ile lisanslanmıştır - detaylar için LICENSE dosyasına bakın.🎯 Yol HaritasıDaha fazla soru kategorisiÇok oyunculu modGelişmiş yapay zeka özellikleriMobil uygulama sürümüÖğrenme platformlarıyla entegrasyon👤 Yazarİbrahim YasinGitHub: @ledlyyWeb Sitesi: ibrahimyasin.net🌟 Desteğinizi GösterinBu proje size yardımcı olduysa bir ⭐️ vermeyi unutmayın!📞 DestekDestek için mail@ibrahimyasin.net adresine e-posta gönderin veya bu depoda bir sorun (issue) oluşturun.
+# 🚀 AI-Powered Quiz App | Your Open Source Productivity Tool
+
+Welcome to a different kind of project. We're not just building a quiz app; we're exploring how intelligent tools can supercharge our daily learning and work. This project is a living, breathing case study in AI-driven productivity, built by the community, for the community.
+
+## ✨ Supercharge Your Workflow
+
+### 🤖 Your Intelligent Co-Pilot
+- **AI Assistant** - Get instant answers, clarifications, and summaries for any question. Think of it as a conversational partner for your tasks.
+- **Personalized Insights** - Our AI analyzes your performance to help you identify patterns and optimize your learning, a skill transferable to any data-driven task.
+- **Interactive Chat** - A direct line to an AI model, demonstrating how conversational interfaces can streamline problem-solving.
+
+### 🎨 Human-Centered Design
+- **Glassmorphism UI** - A modern aesthetic that prioritizes clarity and focus.
+- **Dark/Light Theme** - Because productivity adapts to your environment.
+- **Responsive & Accessible** - A seamless experience on any device, for everyone.
+
+### 📊 Data-Driven Decisions
+- **Real-time Analytics** - Every interaction generates actionable data. Learn to read it to make better decisions.
+- **Weakness Identification** - The AI doesn't just show you what you got wrong; it highlights where to focus your energy for maximum efficiency.
+
+### ⚡ The Engine
+- **ES6+ JavaScript** - Modern syntax for clean, maintainable code.
+- **CSS Custom Properties** - Dynamic styling that empowers quick changes and personalizations.
+- **Progressive Web App Ready** - Because your tools should be with you, wherever you go.
+
+## 🚀 Get Started
+
+### Online Demo
+See it in action: [https://ledlyy.github.io/modern-quiz-2025](https://ledlyy.github.io/modern-quiz-2025)
+
+### Local Development
+
+1.  **Clone the repository**
+    ```bash
+    git clone [https://github.com/ledlyy/modern-quiz-2025.git](https://github.com/ledlyy/modern-quiz-2025.git)
+    cd modern-quiz-2025
+    ```
+
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
+
+3.  **Start the local server**
+    ```bash
+    npm start
+    ```
+
+4.  **Open in your browser**
+    ```
+    http://localhost:3000
+    ```
+
+## 🤝 Join the Adventure
+This project is an open invitation to explore the future of AI-assisted productivity. Whether you're a seasoned developer or a first-time contributor, your perspective and code are incredibly valuable.
+
+- **Contribution is Fun:** We believe in a relaxed, collaborative environment. No question is too small.
+- **A Great Starting Point:** The modular nature of this project makes it perfect for tackling your first open-source issue.
+
+## 👤 Author
+Hi, I'm İbrahim. This project is a reflection of my belief in the power of open-source and smart tools. Let's connect and build the future together.
+
+- **GitHub:** [@ledlyy](https://github.com/ledlyy)
+- **Website:** [ibrahimyasin.net](https://ibrahimyasin.net)
+- **LinkedIn:** Follow me on LinkedIn for more insights on AI, productivity, and tech trends: [ledlyy (İbrahim Yasin)](https://www.linkedin.com/in/ibrahimyasin)
+
+## 🌟 Show your support
+If this project sparks an idea or makes your workflow a little smoother, a star would mean the world!
+
+---
+
+# 🚀 Yapay Zeka Destekli Bilgi Yarışması | Açık Kaynaklı Verimlilik Aracı
+
+Farklı bir projeye hoş geldiniz. Biz sadece bir bilgi yarışması uygulaması yapmıyoruz; akıllı araçların günlük öğrenme ve çalışma hayatımızı nasıl zenginleştirebileceğini araştırıyoruz. Bu proje, topluluk tarafından, topluluk için inşa edilmiş, yapay zeka odaklı verimliliğin yaşayan bir vaka çalışmasıdır.
+
+## ✨ İş Akışınızı Hızlandırın
+
+### 🤖 Akıllı Yardımcınız
+- **Yapay Zeka Asistanı** - Herhangi bir soru için anında cevap, açıklama ve özet alın. Onu görevleriniz için konuşan bir ortak olarak düşünün.
+- **Kişiselleştirilmiş İçgörüler** - Yapay zekamız, verimliliğinizi en üst düzeye çıkarmak için performansınızı analiz eder. Bu beceri, veriye dayalı her işe aktarılabilir.
+- **Etkileşimli Sohbet** - Yapay zeka modeline doğrudan erişim, konuşmaya dayalı arayüzlerin problem çözmeyi nasıl kolaylaştırabileceğini gösterir.
+
+### 🎨 İnsan Odaklı Tasarım
+- **Glassmorphism UI** - Netliği ve odaklanmayı önceliklendiren modern bir estetik.
+- **Koyu/Açık Tema** - Çünkü verimlilik, bulunduğunuz ortama uyum sağlar.
+- **Duyarlı & Erişilebilir** - Herkes için, her cihazda kusursuz bir deneyim.
+
+### 📊 Veriye Dayalı Kararlar
+- **Gerçek Zamanlı Analitik** - Her etkileşim, uygulanabilir veriler üretir. Daha iyi kararlar vermek için bu verileri okumayı öğrenin.
+- **Zayıf Nokta Tespiti** - Yapay zeka sadece neyi yanlış yaptığınızı göstermez; maksimum verimlilik için enerjinizi nereye odaklamanız gerektiğini vurgular.
+
+### ⚡ Projenin Motoru
+- **ES6+ JavaScript** - Temiz, sürdürülebilir kod için modern sözdizimi.
+- **CSS Custom Properties** - Hızlı değişiklikler ve kişiselleştirmeler için dinamik stil.
+- **Progressive Web App Uyumlu** - Çünkü araçlarınız nerede olursanız olun sizinle birlikte olmalı.
+
+## 🚀 Hızlı Başlangıç
+
+### Online Demo
+Canlı olarak görün: [https://ledlyy.github.io/modern-quiz-2025](https://ledlyy.github.io/modern-quiz-2025)
+
+### Yerel Geliştirme
+
+1.  **Depoyu klonlayın**
+    ```bash
+    git clone [https://github.com/ledlyy/modern-quiz-2025.git](https://github.com/ledlyy/modern-quiz-2025.git)
+    cd modern-quiz-2025
+    ```
+
+2.  **Bağımlılıkları yükleyin**
+    ```bash
+    npm install
+    ```
+
+3.  **Yerel sunucuyu başlatın**
+    ```bash
+    npm start
+    ```
+
+4.  **Tarayıcınızda açın**
+    ```
+    http://localhost:3000
+    ```
+
+## 🤝 Maceraya Katılın
+Bu proje, yapay zeka destekli verimliliğin geleceğini keşfetmek için açık bir davettir. İster deneyimli bir geliştirici ister açık kaynak dünyasına yeni adım atan biri olun, bakış açınız ve kodunuz inanılmaz derecede değerli.
+
+- **Katkıda Bulunmak Eğlencelidir:** Rahat ve iş birliğine dayalı bir ortama inanıyoruz. Hiçbir soru çok küçük değildir.
+- **Harika Bir Başlangıç Noktası:** Projenin modüler yapısı, ilk açık kaynak katkınızı yapmak için mükemmel bir ortam sunar.
+
+## 👤 Yazar
+Merhaba, ben İbrahim. Bu proje, açık kaynak ve akıllı araçların gücüne olan inancımın bir yansımasıdır. Gelin, geleceği birlikte inşa edelim.
+
+- **GitHub:** [@ledlyy](https://github.com/ledlyy)
+- **Web Sitesi:** [ibrahimyasin.net](https://ibrahimyasin.net)
+- **LinkedIn:** Yapay zeka, verimlilik ve teknoloji trendleri hakkında daha fazla içgörü için beni LinkedIn'de takip edin: [ledlyy (İbrahim Yasin)](https://www.linkedin.com/in/ibrahimyasin)
+
+## 🌟 Desteğinizi Gösterin
+Bu proje aklınızda bir fikir uyandırdıysa veya iş akışınızı biraz daha akıcı hale getirdiyse, bir yıldız (⭐️) bizim için her şey demektir!
