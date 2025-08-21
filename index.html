@@ -1,34 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Web Server Programming Quiz</title>
-  <link rel="stylesheet" href="index.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Powered Quiz Platform 2025</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Web Server Programming Quiz</h1>
-    
-    <div class="controls">
-      <label for="db-select"><strong>Choose Quiz Set:</strong></label>
-      <select id="db-select">
-        <option value="q.json">Database 1</option>
-        <option value="q2.json">Database 2</option>
-      </select>
-
-      <button id="shuffle-btn" class="shuffle-btn">Shuffle Questions</button>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header-content">
+      <div class="logo">
+        <i class="fas fa-brain"></i>
+        <span>AI Quiz Pro</span>
+      </div>
+      
+      <div class="header-controls">
+        <button class="ai-toggle" id="aiToggle">
+          <i class="fas fa-robot"></i>
+          <span>AI Assistant</span>
+        </button>
+        
+        <div class="theme-toggle" id="themeToggle" title="Toggle theme"></div>
+      </div>
     </div>
   </header>
 
-  <main id="quiz-container">
-    <!-- Questions will be injected here by index.js -->
-  </main>
+  <!-- Main Content -->
+  <div class="container">
+    <div class="quiz-card" id="quizContainer">
+      <!-- Progress Bar -->
+      <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+      <div class="progress-text" id="progressText">Question 1 of 85</div>
 
-  <footer>
-    <p>Built with ❤️ by <a href="https://web.ibrahimyasin.net" target="_blank" rel="noopener">web.ibrahimyasin.net</a></p>
-  </footer>
+      <!-- AI Hint (hidden by default) -->
+      <div class="ai-hint" id="aiHint" style="display: none;">
+        <div class="ai-hint-icon">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <div id="aiHintText">AI hint will appear here...</div>
+      </div>
 
-  <script src="index.js"></script>
+      <!-- Quiz Content -->
+      <div id="quizContent">
+        <!-- Questions will be rendered here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- AI Chat Modal -->
+  <div class="ai-chat-modal" id="aiChatModal">
+    <div class="ai-chat-content">
+      <div class="ai-chat-header">
+        <h3><i class="fas fa-robot"></i> AI Study Assistant</h3>
+        <button class="btn btn-secondary" id="closeChatBtn">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      
+      <div class="ai-chat-messages" id="chatMessages">
+        <div class="ai-message">
+          <strong>AI:</strong> Hi! I'm your study assistant. Ask me anything about the quiz topics or request explanations!
+        </div>
+      </div>
+      
+      <textarea 
+        class="ai-input" 
+        id="chatInput" 
+        placeholder="Ask me about RESTful APIs, ASP.NET, or any other topic..."
+      ></textarea>
+      
+      <div style="display: flex; gap: 1rem;">
+        <button class="btn btn-primary" id="sendChatBtn">
+          <i class="fas fa-paper-plane"></i>
+          Send
+        </button>
+        <button class="btn btn-secondary" id="clearChatBtn">
+          <i class="fas fa-trash"></i>
+          Clear
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

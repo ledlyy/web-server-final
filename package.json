@@ -1,0 +1,32 @@
+{
+  "name": "web-server-final",
+  "version": "1.0.0",
+  "description": "AI-powered modern quiz application with advanced UI/UX",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3000",
+    "dev": "live-server --port=3000 --watch=.",
+    "build": "echo 'Static site - no build needed'",
+    "deploy": "gh-pages -d ."
+  },
+  "keywords": [
+    "quiz",
+    "ai",
+    "education",
+    "javascript",
+    "modern-ui",
+    "glassmorphism",
+    "responsive"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "gh-pages": "^4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KULLANICI_ADINIZ/web-server-final.git"
+  },
+  "homepage": "https://KULLANICI_ADINIZ.github.io/web-server-final"
+}
