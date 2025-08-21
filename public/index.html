@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI-Powered Quiz Platform 2025</title>
-  <!-- CSS ve JS yolları artık ana dizine göre, ama Vercel public klasöründen servis edecek. -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="/index.css" rel="stylesheet">
 </head>
@@ -47,8 +46,28 @@
 
       <!-- Quiz Content -->
       <div id="quizContent">
-        <!-- Questions will be rendered here -->
+        <h2 class="question" id="question-text"></h2>
+        <div class="options"></div>
+        <div class="explanation" style="display: none;">
+          <i class="fas fa-info-circle"></i>
+          <span id="explanation-text"></span>
+        </div>
       </div>
+
+      <!-- Navigation Buttons -->
+      <div class="nav-buttons">
+        <button class="btn btn-secondary" id="prev-btn" disabled>
+          <i class="fas fa-arrow-left"></i> Previous
+        </button>
+        <button class="btn btn-primary" id="next-btn">
+          Next <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+
+      <!-- Submit Button -->
+      <button class="btn btn-success" id="submit-btn" style="display: none;">
+        <i class="fas fa-check"></i> Submit Quiz
+      </button>
     </div>
   </div>
 
@@ -87,7 +106,7 @@
     </div>
   </div>
 
-  <!-- JavaScript Dosyası -->
+  <!-- JavaScript File -->
   <script src="/index.js"></script>
 </body>
 </html>
