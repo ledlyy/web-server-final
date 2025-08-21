@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const reviewAnswersBtn = document.getElementById('reviewAnswersBtn');
     const correctCountElem = document.getElementById('correctCount');
     const wrongCountElem = document.getElementById('wrongCount');
-    const resultDetailsContainer = document.getElementById('resultDetailsContainer');
     const reviewQuizSection = document.getElementById('reviewQuizSection');
 
     // Quiz State
@@ -165,20 +164,6 @@ document.addEventListener('DOMContentLoaded', function() {
         nextBtn.style.display = currentQuestion === questions.length - 1 ? 'none' : 'block';
     }
     
-    function prevQuestion() {
-        if (currentQuestion > 0) {
-            currentQuestion--;
-            loadQuestion();
-        }
-    }
-    
-    function nextQuestion() {
-        if (currentQuestion < questions.length - 1) {
-            currentQuestion++;
-            loadQuestion();
-        }
-    }
-    
     function calculateScore() {
         let correctCount = 0;
         let wrongCount = 0;
@@ -211,16 +196,19 @@ document.addEventListener('DOMContentLoaded', function() {
         const { correctCount, wrongCount } = calculateScore();
         const timeTaken = quizTimer.textContent;
 
+        console.log("Calculated Score:", { correctCount, wrongCount });
+
+        // Always set the values, then check the toggle to hide them
+        finalScore.textContent = `${correctCount} / ${questions.length}`;
+        correctCountElem.textContent = correctCount;
+        wrongCountElem.textContent = wrongCount;
+        finalTime.textContent = timeTaken;
+
         if (hideScoreToggle.checked) {
             finalScore.textContent = '***';
             correctCountElem.textContent = '***';
             wrongCountElem.textContent = '***';
-        } else {
-            finalScore.textContent = `${correctCount} / ${questions.length}`;
-            correctCountElem.textContent = correctCount;
-            wrongCountElem.textContent = wrongCount;
         }
-        finalTime.textContent = timeTaken;
         
         resultsModal.style.display = 'flex';
     }
@@ -236,18 +224,21 @@ document.addEventListener('DOMContentLoaded', function() {
         questions.forEach((q, index) => {
             const resultItem = document.createElement('div');
             resultItem.classList.add('result-item');
+            const userAnswerText = userAnswers[index] ? q.options[userAnswers[index]] : 'Cevapsız';
+            const isCorrect = userAnswers[index] === q.correctAnswer;
+            const iconClass = isCorrect ? 'fa-check-circle' : 'fa-times-circle';
+            const answerClass = isCorrect ? 'correct' : 'incorrect';
+
             resultItem.innerHTML = `
                 <div class="result-question">${index + 1}. ${q.question}</div>
                 <div class="result-answer">
-                    Your Answer: 
-                    <span class="user-answer ${userAnswers[index] === q.correctAnswer ? 'correct' : 'incorrect'}">
-                        ${userAnswers[index] ? q.options[userAnswers[index]] : 'Cevapsız'}
-                        <i class="fas ${userAnswers[index] === q.correctAnswer ? 'fa-check-circle' : 'fa-times-circle'}"></i>
+                    <span class="label">Senin Cevabın:</span>
+                    <span class="user-answer ${answerClass}">${userAnswerText}
+                        <i class="fas ${iconClass}"></i>
                     </span>
                     <br>
-                    <span class="correct-answer">
-                        Correct Answer: ${q.options[q.correctAnswer]}
-                    </span>
+                    <span class="label">Doğru Cevap:</span>
+                    <span class="correct-answer">${q.options[q.correctAnswer]}</span>
                 </div>
             `;
             reviewList.appendChild(resultItem);
@@ -295,7 +286,7 @@ document.addEventListener('DOMContentLoaded', function() {
         addMessage(message, 'user');
         // Simple AI response for now, to be replaced with a real API call
         setTimeout(() => {
-          const aiResponse = `Hi! I'm your study assistant. You asked: "${message}". What would you like to know more about?`;
+          const aiResponse = `Merhaba! Çalışma asistanınız benim. "${message}" diye sordunuz. Başka ne öğrenmek istersiniz?`;
           addMessage(aiResponse, 'ai');
         }, 1000);
         aiInput.value = '';
